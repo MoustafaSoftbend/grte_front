@@ -1,0 +1,24 @@
+{
+  "files": {
+    "pages/index.tsx": [
+      {
+        "id": "4c3f0e84-483e-4529-8a50-723153ddedfd",
+        "line": 10,
+        "version": 386,
+        "index": 294
+      },
+      {
+        "id": "62ac3b91-c311-4419-82fe-fc6ea26d217f",
+        "line": 10,
+        "version": 386,
+        "index": 294
+      },
+      {
+        "id": "f724910f-1911-4710-9d3a-1536c451ccf2",
+        "line": 27,
+        "version": 386,
+        "index": 627
+      }
+    ]
+  }
+}
