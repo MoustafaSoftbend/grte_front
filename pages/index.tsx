@@ -96,7 +96,7 @@ const Home: NextPage = () => {
           </div>
           <div className="overlay ov-2"></div>
 
-          <div className="main-content absolute w-fit">
+          <div className="main-content absolute">
 
             <section className="news-feed p-2 clr-primary">
 
@@ -128,57 +128,58 @@ const Home: NextPage = () => {
             </section>
 
             <section className="slider">
-              <div className="container">
+              <div className="container p-2">
                 <h1 className="title">Lorem Ipsum is simply dummy text of the printing and                   typesetting industry.Lorem Ipsum has been the industry's standard dummy                  text ever since the 1500s, when an unknown printer took a galley of type and              scrambled it to make a type specimen book.</h1>
-                <div className="H-slider-heading">
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
-                  <h3>10kwp+</h3>
-                  <h3>1mWp</h3>
-                  <h3>10mWp+</h3>
+                <div className="H-slider">
+                  <div className="H-slider-heading">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+                    <h3>10kwp+</h3>
+                    <h3>1mWp</h3>
+                    <h3>10mWp+</h3>
+                  </div>
+                  <div className="H-slider-wrapper">
+                    <div className="H-card">
+                      <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" className="H-card-img"></img>
+                      <div className="H-card-body flex flex-row ">
+                        <div className="H-card-text">
+                          <p>title</p>
+                          <h4>1MWP</h4>
+                        </div>
+                        <button className="round-button"></button>
+                      </div>
+                    </div>
+                    <div className="H-card">
+                      <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" className="H-card-img"></img>
+                      <div className="H-card-body flex flex-row ">
+                        <div className="H-card-text">
+                          <p>title</p>
+                          <h4>1MWP</h4>
+                        </div>
+                        <button className="round-button"></button>
+                      </div>
+                    </div>
+                    <div className="H-card">
+                      <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" className="H-card-img"></img>
+                      <div className="H-card-body flex flex-row ">
+                        <div className="H-card-text">
+                          <p>title</p>
+                          <h4>1MWP</h4>
+                        </div>
+                        <button className="round-button"></button>
+                      </div>
+                    </div>
+                    <div className="H-card">
+                      <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" className="H-card-img"></img>
+                      <div className="H-card-body flex flex-row ">
+                        <div className="H-card-text">
+                          <p>title</p>
+                          <h4>1MWP</h4>
+                        </div>
+                        <button className="round-button"></button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="H-slider-container">
-                  <div className="H-card">
-                    <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" className="H-card-img"></img>
-                    <div className="H-card-body flex flex-row ">
-                      <div className="H-card-text">
-                        <p>title</p>
-                        <h4>1MWP</h4>
-                      </div>
-                      <button className="round-button"></button>
-                    </div>
-                  </div>
-                  <div className="H-card">
-                    <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" className="H-card-img"></img>
-                    <div className="H-card-body flex flex-row ">
-                      <div className="H-card-text">
-                        <p>title</p>
-                        <h4>1MWP</h4>
-                      </div>
-                      <button className="round-button"></button>
-                    </div>
-                  </div>
-                  <div className="H-card">
-                    <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" className="H-card-img"></img>
-                    <div className="H-card-body flex flex-row ">
-                      <div className="H-card-text">
-                        <p>title</p>
-                        <h4>1MWP</h4>
-                      </div>
-                      <button className="round-button"></button>
-                    </div>
-                  </div>
-                  <div className="H-card">
-                    <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" className="H-card-img"></img>
-                    <div className="H-card-body flex flex-row ">
-                      <div className="H-card-text">
-                        <p>title</p>
-                        <h4>1MWP</h4>
-                      </div>
-                      <button className="round-button"></button>
-                    </div>
-                  </div>
-                </div>
-
               </div>
             </section>
 
