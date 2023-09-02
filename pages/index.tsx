@@ -2,11 +2,12 @@ import type { NextPage, } from 'next'
 import Script from 'next/script'
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/globals.css'
 import 'tailwindcss/tailwind.css';
-import React, { Fragment, useEffect, useRef } from 'react'
+import React, { Fragment, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import RenderDiffChecker from '../components/RenderDiffChecker';
 
 
 const Home: NextPage = () => {
@@ -14,23 +15,22 @@ const Home: NextPage = () => {
   const nav_btn = useRef(null)
   useEffect(() => {
     window.addEventListener('scroll', (e) => {
-      if (e) {
-        console.log(e.target.offsetY)
+      if (window.pageYOffset!== 0) {
+        nav.current.style.backgroundColor = 'rgba(43, 55, 64)';
       }
-      nav.current.style.backgroundColor = 'rgba(43, 55, 64, 0.9)';
       // nav_btn.current.style.backgroundColor = '#18ede5';
       // nav_btn.current.style.backgroundColor = '#2b3740';
     })
-
   }, [])
   return (
     <>
+    <RenderDiffChecker />
       <head>
         <link rel="stylesheet" href="https://fonts.google.com/download?family=Chivo%20Mono" />
         <script src="https://kit.fontawesome.com/e20sdfsd9.js" crossOrigin="anonymous"></script>
       </head>
-      <body className="layout">
-        <header className="navbar clr-primary">
+      <div className='layout'>
+      <header className="navbar clr-primary">
           <div className="nav-content relative">
             <nav ref={nav} className="top-navigation flex flex-row justify-between bg-transparent fixed">
               <div className='left-navigation p-2 flex justify-start'>
@@ -42,11 +42,11 @@ const Home: NextPage = () => {
                 <ul className="side-ul flex justify-start">
                   <li><Link href="/" ref={nav_btn} className="p-3 btn btn-primary clr-black font-bold">Login</Link></li>
                   <li ><Link href="/" className="p-1">Dash </Link></li>
-                  <li><Link href="/"><FontAwesomeIcon icon="fa-solid fa-bars-sort" /></Link></li>
+                  <li><Link href="/"></Link></li>
                 </ul>
               </div>
             </nav>
-            <div className="showcase h-fit z-0">
+            <div className="showcase z-0">
               <img className="showcase-img" src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"></img>
               <div className="overlay ov-1"></div>
             </div>
@@ -92,99 +92,77 @@ const Home: NextPage = () => {
 
         <main className="clr-primary relative">
           <div className="showcase absolute">
-            <img src="https://unsplash.com/photos/NEBiauphveY/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8MzF8fGFsZ2llcnN8ZW58MHx8fHwxNjcxNDQxNjk4&force=true" className="showcase-img"></img>
+            <img src="https://unsplash.com/photos/E72PVn1qi30/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8YWxnZXJpYXxlbnwwfHx8fDE2ODUxODMzODN8MA&force=true" className="showcase-img"></img>
+            <div className="overlay ov-2"></div>
           </div>
-          <div className="overlay ov-2"></div>
 
           <div className="main-content absolute">
-
-            <section className="news-feed p-2 clr-primary">
-
-              <div className="container flex flex-row p1">
-                <div className="container p-2">
-                  <div className="grid-view">
-                    <Link className="grid-news-item-1" href="/">
-                      <img className="object-fill overflow-y-atou" src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"></img>
-                    </Link>
-                    <Link className="grid-news-item-2" href="/">
-                      <img className="object-fill" src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"></img></Link>
-                    <Link className="grid-news-item-3 " href="/">
-                      <img className="object-fill" src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"></img>
-                    </Link>
-                  </div>
-                  <div className="card flex flex-col">
-                    <h1 className="card-title">
-                      Come to explore our diferrent structures and services
-                    </h1>
-                    <p className="card-text">
-                      we offer plenty of services in different countris for more info consult the link.
-                    </p>
-                    <button type="button" className="btn btn-invisible">
-                      Read More
-                    </button>
-                  </div>
+            <section className='card-section'>
+              <div className="container">
+              <div className="card-section-content">
+              <div className='article'>
+                <div className="article-head">
+                  <h2 className='article-title'>Lorem ipsum dolor sit amet.</h2>
+                  <h3 className='article-subtitle' >Lorem ipsum dolor sit.</h3>
+                  <div className='article-separation'></div>
                 </div>
+                <p className='article-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor nobis id, sed distinctio consequuntur assumenda omnis amet culpa obcaecati deserunt.</p>
+                <div className="article-footer"><small className='article'>#Lorem ipsum dolor sit amet.</small></div>
+                <div className="global-separation"></div>
               </div>
-            </section>
-
-            <section className="slider">
-              <div className="container p-2">
-                <h1 className="title">Lorem Ipsum is simply dummy text of the printing and                   typesetting industry.Lorem Ipsum has been the industry's standard dummy                  text ever since the 1500s, when an unknown printer took a galley of type and              scrambled it to make a type specimen book.</h1>
-                <div className="H-slider">
-                  <div className="H-slider-heading">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
-                    <h3>10kwp+</h3>
-                    <h3>1mWp</h3>
-                    <h3>10mWp+</h3>
-                  </div>
-                  <div className="H-slider-wrapper">
-                    <div className="H-card">
-                      <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" className="H-card-img"></img>
-                      <div className="H-card-body flex flex-row ">
-                        <div className="H-card-text">
-                          <p>title</p>
-                          <h4>1MWP</h4>
-                        </div>
-                        <button className="round-button"></button>
-                      </div>
-                    </div>
-                    <div className="H-card">
-                      <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" className="H-card-img"></img>
-                      <div className="H-card-body flex flex-row ">
-                        <div className="H-card-text">
-                          <p>title</p>
-                          <h4>1MWP</h4>
-                        </div>
-                        <button className="round-button"></button>
-                      </div>
-                    </div>
-                    <div className="H-card">
-                      <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" className="H-card-img"></img>
-                      <div className="H-card-body flex flex-row ">
-                        <div className="H-card-text">
-                          <p>title</p>
-                          <h4>1MWP</h4>
-                        </div>
-                        <button className="round-button"></button>
-                      </div>
-                    </div>
-                    <div className="H-card">
-                      <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" className="H-card-img"></img>
-                      <div className="H-card-body flex flex-row ">
-                        <div className="H-card-text">
-                          <p>title</p>
-                          <h4>1MWP</h4>
-                        </div>
-                        <button className="round-button"></button>
-                      </div>
-                    </div>
-                  </div>
+              
+              <div className='card'>
+                <div className="card-header">
+                <h2 className='card-title'>Lorem ipsum dolor sit amet.</h2>
                 </div>
+                <Link className='card-link' href="/"><img className='card-image' src='https://unsplash.com/photos/eIBTh5DXW9w/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8ZWxlY3RyaWMlMjBwb3dlcnxlbnwwfHx8fDE2ODUyNzU4ODZ8MA&force=true'></img></Link>
+                <p className='card-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor nobis id, sed distinctio consequuntur assumenda omnis amet culpa obcaecati deserunt.</p>
+                <div className="global-separation"></div>
               </div>
+              
+              <div className='article'>
+                <div className="article-head">
+                  <h2 className='article-title'>Lorem ipsum dolor sit amet.</h2>
+                  <h3 className='article-subtitle' >Lorem ipsum dolor sit.</h3>
+                  <div className='article-separation'></div>
+                </div>
+                <p className='article-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor nobis id, sed distinctio consequuntur assumenda omnis amet culpa obcaecati deserunt.</p>
+                <div className="article-footer"><small className='article'>#Lorem ipsum dolor sit amet.</small></div>
+                <div className="global-separation"></div>
+              </div>
+              
+              <div className='card'>
+                <div className="card-header">
+                <h2 className='card-title'>Lorem ipsum dolor sit amet.</h2>
+                </div>
+                <Link className='card-link' href="/"><img className='card-image' src='https://unsplash.com/photos/eIBTh5DXW9w/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8ZWxlY3RyaWMlMjBwb3dlcnxlbnwwfHx8fDE2ODUyNzU4ODZ8MA&force=true'></img></Link>
+                <p className='card-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor nobis id, sed distinctio consequuntur assumenda omnis amet culpa obcaecati deserunt.</p>
+                <div className="global-separation"></div>
+              </div>
+              <div className='article'>
+                <div className="article-head">
+                  <h2 className='article-title'>Lorem ipsum dolor sit amet.</h2>
+                  <h3 className='article-subtitle' >Lorem ipsum dolor sit.</h3>
+                  <div className='article-separation'></div>
+                </div>
+                <p className='article-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor nobis id, sed distinctio consequuntur assumenda omnis amet culpa obcaecati deserunt.</p>
+                <div className="article-footer"><small className='article'>#Lorem ipsum dolor sit amet.</small></div>
+                <div className="global-separation"></div>
+              </div>
+              
+              <div className='card'>
+                <div className="card-header">
+                <h2 className='card-title'>Lorem ipsum dolor sit amet.</h2>
+                </div>
+                <Link className='card-link' href="/"><img className='card-image' src='https://unsplash.com/photos/eIBTh5DXW9w/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8ZWxlY3RyaWMlMjBwb3dlcnxlbnwwfHx8fDE2ODUyNzU4ODZ8MA&force=true'></img></Link>
+                <p className='card-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor nobis id, sed distinctio consequuntur assumenda omnis amet culpa obcaecati deserunt.</p>
+              </div>
+              </div>
+              </div>
+
             </section>
 
           </div>
-
         </main>
         <footer className="footer bkg-black clr-primary">
           <div className="container">
@@ -192,9 +170,9 @@ const Home: NextPage = () => {
             <address className="">700 buraux gue de constantine</address>
           </div>
         </footer>
-      </body>
+      </div>
+
     </>
   );
 }
-
 export default Home
