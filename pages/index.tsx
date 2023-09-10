@@ -49,7 +49,7 @@ const Home: NextPage = () => {
               <img className="showcase-img" src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"></img>
               <div className="overlay ov-1"></div>
             </div>
-            <div className="nav-body z-10 absolute top-20 left-0 h-fit w-fit sm:m-5">
+            <div className="nav-body z-10 absolute top-20 left-0 right-0">
               <div className="left-nav-body p-5 mr-10 h-fit">
                 <h1 className="nav-title color-primary" >Welcome to our company</h1>
                 <div className="stats flex flex-row justify-between">
@@ -59,7 +59,7 @@ const Home: NextPage = () => {
                       Energy Production
                     </p>
                   </div>
-                  <div className="stats-box">
+                  <div className="stats-box"> 
                     <h3 className="stats-num">211</h3>
                     <p className="Stat-description">
                       Facilities
@@ -74,6 +74,7 @@ const Home: NextPage = () => {
                 </div>
               </div>
               <div className="right-nav-body">
+
                 <div className="news-slider">
                   <button type="button" className="btn btn-invisible news-slider-btn">Vistes</button>
                   <div className="v-seperation"></div>
@@ -89,13 +90,25 @@ const Home: NextPage = () => {
           </div>
         </header>
 
-        <main className="clr-primary relative flex flex-row">
+        <main className="clr-primary grid relative">
           <div className="showcase absolute">
             <img src="https://unsplash.com/photos/E72PVn1qi30/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8YWxnZXJpYXxlbnwwfHx8fDE2ODUxODMzODN8MA&force=true" className="showcase-img"></img>
             <div className="overlay ov-2"></div>
           </div>
 
           <div className="main-content relative top-0 bottom-0">
+          <section className="grid-show c_container clr-primary">
+              <div className="side-grid">
+                <h1 className="side-grid-title">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia, atque?</h1>
+                <p className="side-grid-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                <Link rel="stylesheet" href="" className="side-grid-btn">learn more</Link>
+              </div>
+              <div className="mosaic grid">
+                <Link className='mosaic-view-panel col-span-2 row-span-1' href=""><img src="https://unsplash.com/photos/a1Lm99Kkqtg/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8OHx8cG93ZXIlMjBlbmVyZ3klMjB2aWRlb3xmcnwwfHx8fDE2OTM5MDUzNzl8MA&force=true&w=2400" alt="" /></Link>
+                <Link className='row-span-1' href=""><img src="https://unsplash.com/photos/WYGhTLym344/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8cG93ZXIlMjBlbmVyZ3klMjB2aWRlb3xmcnwwfHx8fDE2OTM5MDUzNzl8MA&force=true" alt="" /></Link>
+                <video src="https://www.pexels.com/fr-fr/download/video/6522668/?fps=29.97&h=1080&w=1920"></video>
+              </div>
+            </section>
             <section className='card-section'>
               <div className="c_container">
               <div className="card-section-content">
@@ -159,20 +172,8 @@ const Home: NextPage = () => {
               </div>
 
               </div>
-
             </section>
-            <section className="grid-show c_container clr-primary">
-              <div className="side-grid">
-              <h1 className="side-grid-title">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia, atque?</h1>
-              <p className="side-grid-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-              <Link rel="stylesheet" href="" className="side-grid-btn">learn more</Link>
-              </div>
-              <div className="grid-view">
-                <Link href=""><img src="https://unsplash.com/photos/a1Lm99Kkqtg/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8OHx8cG93ZXIlMjBlbmVyZ3klMjB2aWRlb3xmcnwwfHx8fDE2OTM5MDUzNzl8MA&force=true&w=2400" alt="" /></Link>
-                <Link href=""><img src="https://unsplash.com/photos/WYGhTLym344/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8cG93ZXIlMjBlbmVyZ3klMjB2aWRlb3xmcnwwfHx8fDE2OTM5MDUzNzl8MA&force=true" alt="" /></Link>
-                <video src="https://www.pexels.com/fr-fr/download/video/6522668/?fps=29.97&h=1080&w=1920"></video>
-                </div>
-            </section>
+            
           </div>
         </main>
         <footer className="footer bkg-black clr-primary">
