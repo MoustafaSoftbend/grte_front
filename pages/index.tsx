@@ -2,12 +2,12 @@ import type { NextPage, } from 'next'
 import Script from 'next/script'
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/globals.css'
 import 'tailwindcss/tailwind.css';
+import styles from '../styles/globals.css'
 import React, { Fragment, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 const Home: NextPage = () => {
   const nav = useRef(null)
@@ -39,7 +39,7 @@ const Home: NextPage = () => {
               </div>
               <div className='right-navigation pt-2 z-150'>
                 <ul className="side-ul flex justify-start">
-                  <li><Link href="/" ref={nav_btn} className="p-3 btn btn-primary clr-black font-bold">Login</Link></li>
+                  <li><Link href="/" ref={nav_btn} className="p-3 button  button-primary clr-black font-bold">Login</Link></li>
                   <li ><Link href="/" className="p-1">Dash </Link></li>
                   <li><Link href="/"></Link></li>
                 </ul>
@@ -49,10 +49,10 @@ const Home: NextPage = () => {
               <img className="showcase-img" src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"></img>
               <div className="overlay ov-1"></div>
             </div>
-            <div className="nav-body z-10 absolute top-20 left-0 right-0">
-              <div className="left-nav-body p-5 mr-10 h-fit">
+            <div className="nav-body z-10 absolute bottom-10 left-0 right-0">
+              <div className="left-nav-body p-5 h-fit">
                 <h1 className="nav-title color-primary" >Welcome to our company</h1>
-                <div className="stats flex flex-row justify-between">
+                <div className="stats flex flex-row justify-between w-4/5 mx-auto ">
                   <div className="stats-box">
                     <h3 className="stats-num">21 MWp</h3>
                     <p className="Stat-description">
@@ -80,10 +80,12 @@ const Home: NextPage = () => {
                   <div className="v-seperation"></div>
                   <button className="news-slider-title">Developpement</button>
                 </div>
-                <div className="news-slider-body">
+                <div className="news-slider-body p-3 m-3">
                   <h2 className="color-primary">This the new objectives of the enterprise based on new decisions</h2>
                 </div>
-                <button type="button" className="btn-btn-invisible">Click for reading more</button>
+              </div>
+              <div className='c_container'>
+                <Link href="" className="button button-primary m-3 ml-3 block w-1/2 text-center clr-black bold ">Click for reading more</Link>
               </div>
             </div>
 
@@ -107,6 +109,10 @@ const Home: NextPage = () => {
                 <Link className='mosaic-view-panel col-span-2 row-span-1' href=""><img src="https://unsplash.com/photos/a1Lm99Kkqtg/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8OHx8cG93ZXIlMjBlbmVyZ3klMjB2aWRlb3xmcnwwfHx8fDE2OTM5MDUzNzl8MA&force=true&w=2400" alt="" /></Link>
                 <Link className='row-span-1' href=""><img src="https://unsplash.com/photos/WYGhTLym344/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8cG93ZXIlMjBlbmVyZ3klMjB2aWRlb3xmcnwwfHx8fDE2OTM5MDUzNzl8MA&force=true" alt="" /></Link>
                 <video src="https://www.pexels.com/fr-fr/download/video/6522668/?fps=29.97&h=1080&w=1920"></video>
+              </div>
+              <div className="grid-show-info p-1">
+                <p className="grid-show-info-text p-3 m-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde, cumque?</p>
+                <Link href="" className="button button-secondary m-5 mt-10 font-bold px-10 flex flex-row space-between">  <p className=''>Meher Shehn</p>  <FontAwesomeIcon className='arrow-primary p-2 mx-3 border-white-500' icon={faArrowRight} /> </Link>
               </div>
             </section>
             <section className='card-section'>
@@ -173,7 +179,19 @@ const Home: NextPage = () => {
 
               </div>
             </section>
-            
+            <section className="video-section">
+              <div className="video-grid">
+                <div className="main-grid-view">
+                <img className='main-vid vid' src='https://pixabay.com/get/gf3f0e2196a6a2a6041fcf2289921997effb879763b4f0d9ae6a7a1514549c43959ef4e343d970bc3e0c9cfe9eb28d479.jpg'></img>
+                </div>
+                <div className="grid-slider-view">
+                <img className='vid' src="https://pixabay.com/get/g45ca4cfbebe0a84fd0d78ab12a0aaf00a257b3107916710addbcab1d206bb11dda04098778836d0c12888ca76b55b00a.jpg"></img>
+                <img className='vid' src="https://pixabay.com/get/gabff973796e3428ba65810173a8897b5440ecc62f0dfccd9100f5363dccf59662a033ae6a4a69b471e5ee4d81671ce23.jpg"></img>
+                <img className='vid' src="https://pixabay.com/get/g45ca4cfbebe0a84fd0d78ab12a0aaf00a257b3107916710addbcab1d206bb11dda04098778836d0c12888ca76b55b00a.jpg"></img>
+                <img className='vid' src="https://pixabay.com/get/g2342d332c6aca5f60411222374193a358944cf59a1fc84f58260973cc2a484245871e228fc3b270915e098cd6dced8e5.jpg"></img>
+                </div>
+            </div>
+            </section>
           </div>
         </main>
         <footer className="footer bkg-black clr-primary">

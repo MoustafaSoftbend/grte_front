@@ -16,15 +16,21 @@
   max-width: 1000px;
 } 
 
-.btn {
+.button {
   border-radius: 15px;
-  padding: 0.5rem;
+  padding: 0.8rem;
   box-sizing: border-box;
 }
 
-.btn-primary {
+.button-primary {
   color: #bdd5da;
   background-color:#18ede5 ;
+}
+
+.button-secondary {
+  color:#bdd5da ;
+  background-color: #2b3740;
+  border: #18ede5 solid 2px;
 }
 
 .clr-primary {
@@ -42,6 +48,13 @@
 }
 .bkg-black {
   background-color: #2b3740;
+}
+
+.arrow-primary {
+  border: #18ede5 solid 1px;
+  color: #1e262b;
+  border-radius: 50%;
+  background-color: #18ede5;
 }
 
 html{
@@ -156,6 +169,10 @@ ul.side-ul li {
     object-fit: cover;
 }
 
+header .nav-title {
+  font-size: 2em;
+}
+
 .stats-box {
   padding: 0.5rem;
   text-align: center;
@@ -163,11 +180,12 @@ ul.side-ul li {
 
 .stats-num {
   color:#18ede5;
+  font-size: 1.5em;
   font-weight: bold;
 }
 
 .Stat-description {
-  font-size: 0.5rem;
+  font-size: 0.8em;
 }
 
 .right-nav-body{
@@ -175,6 +193,9 @@ ul.side-ul li {
   
 }
 
+.news-slider {
+  font-size: 1.3em;
+}
 
 .news-slider-btn, .v-seperation,.news-slider-title {
   display: inline-block;
@@ -183,7 +204,7 @@ ul.side-ul li {
  padding: 1rem;
 }
 .right-nav-body .v-seperation {
-  height: 20px;
+  height: 18px;
   width: 1px;
   background-color: #bdd5da;
 }
@@ -310,6 +331,24 @@ p.article-text {
 
 .card-text {
   padding: 1rem 0.8rem;
+}
+
+secrion.video-section .video-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+secrion.video-section .video- .main-grid-view {
+}
+
+secrion.video-section .video- .grid-slider-view{
+  display: flex;
+  flex-direction: row;
+  overflow: auto;
+}
+
+
+secrion.video-section .video-grid .vid {
 }
 
 .footer {
