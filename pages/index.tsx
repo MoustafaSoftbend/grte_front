@@ -12,6 +12,9 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 const Home: NextPage = () => {
   const nav = useRef(null)
   const nav_btn = useRef(null)
+  const slider_elements = useRef(null)
+  const src = slider_elements.children;
+  console.log(src)
   useEffect(() => {
     window.addEventListener('scroll', (e) => {
       if (window.pageYOffset!== 0) {
@@ -93,14 +96,13 @@ const Home: NextPage = () => {
         </header>
 
         <main className="clr-primary grid relative">
-          <div className="showcase absolute">
+          <section className="grid-show relative clr-primary">
+          <div className="showcase absolute top-0 left-0 h-fit w-fit">
             <img src="https://unsplash.com/photos/E72PVn1qi30/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8YWxnZXJpYXxlbnwwfHx8fDE2ODUxODMzODN8MA&force=true" className="showcase-img"></img>
             <div className="overlay ov-2"></div>
           </div>
-
-          <div className="main-content relative top-0 bottom-0">
-          <section className="grid-show c_container clr-primary">
-              <div className="side-grid">
+            <div className="grid-show-content c_container">
+            <div className="side-grid">
                 <h1 className="side-grid-title">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia, atque?</h1>
                 <p className="side-grid-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
                 <Link rel="stylesheet" href="" className="side-grid-btn">learn more</Link>
@@ -114,6 +116,55 @@ const Home: NextPage = () => {
                 <p className="grid-show-info-text p-3 m-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde, cumque?</p>
                 <Link href="" className="button button-secondary m-5 mt-10 font-bold px-10 flex flex-row space-between">  <p className=''>Meher Shehn</p>  <FontAwesomeIcon className='arrow-primary p-2 mx-3 border-white-500' icon={faArrowRight} /> </Link>
               </div>
+            </div>
+            </section>
+            <section className="video-section">
+              <div className="video-grid">
+                <div className="main-grid-view">
+                <img className='main-vid vid' src='https://images.pexels.com/photos/4320473/pexels-photo-4320473.jpeg?cs=srgb&dl=pexels-kelly-4320473.jpg&fm=jpg&w=5464&h=3070'></img>
+                </div>
+                <div className="grid-slider-view">
+                <div className="overlay"></div>
+                <div ref={slider_elements} className="slider-elements">
+                <div className="vid-container">
+                <img id='1' className='vid' src="https://unsplash.com/photos/VuR4oHZ3ucc/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8cG93ZXIlMjBzdWJzdGF0aW9ufGVufDB8fHx8MTY5NDYzMjM1OHww&force=true"></img>
+                  <div className="vid-link-hover">
+                  <Link href='' className="vid-container-link">Clic kHere</Link>
+                  </div>
+                </div>
+                <div className="vid-container">
+                <img id='2' className='vid' src='https://images.pexels.com/photos/4320473/pexels-photo-4320473.jpeg?cs=srgb&dl=pexels-kelly-4320473.jpg&fm=jpg&w=5464&h=3070'></img>
+                <div className="vid-link-hover">
+                  <Link href='' className="vid-container-link">Clic kHere</Link>
+                  </div>
+                </div>
+                <div className="vid-container">
+                <img id='3' className='vid' src="https://images.pexels.com/photos/171428/pexels-photo-171428.jpeg?cs=srgb&dl=pexels-pok-rie-171428.jpg&fm=jpg&w=2300&h=1533"></img>
+                <div className="vid-link-hover">
+                  <Link href='' className="vid-container-link">Clic kHere</Link>
+                  </div>
+                </div>
+                <div className="vid-container">
+                <img id='4' className='vid' src="https://images.pexels.com/photos/3877660/pexels-photo-3877660.jpeg?cs=srgb&dl=pexels-ricky-esquivel-3877660.jpg&fm=jpg&w=5938&h=3959"></img>
+                <div className="vid-link-hover">
+                  <Link href='' className="vid-container-link">Clic kHere</Link>
+                  </div>
+                </div>
+                <div className="vid-container">
+                <img id='5' className='vid' src="https://images.pexels.com/photos/3877660/pexels-photo-3877660.jpeg?cs=srgb&dl=pexels-ricky-esquivel-3877660.jpg&fm=jpg&w=5938&h=3959"></img>
+                <div className="vid-link-hover">
+                  <Link href='' className="vid-container-link">Clic kHere</Link>
+                  </div>
+                </div>
+                <div className="vid-container">
+                <img id='6' className='vid' src="https://images.pexels.com/photos/171428/pexels-photo-171428.jpeg?cs=srgb&dl=pexels-pok-rie-171428.jpg&fm=jpg&w=2300&h=1533"></img>
+                <div className="vid-link-hover">
+                  <Link href='' className="vid-container-link">Clic kHere</Link>
+                  </div>
+                </div>
+                </div>
+                </div>
+            </div>
             </section>
             <section className='card-section'>
               <div className="c_container">
@@ -176,23 +227,76 @@ const Home: NextPage = () => {
                 <p className='card-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor nobis id, sed distinctio consequuntur assumenda omnis amet culpa obcaecati deserunt.</p>
               </div>
               </div>
-
               </div>
             </section>
-            <section className="video-section">
-              <div className="video-grid">
-                <div className="main-grid-view">
-                <img className='main-vid vid' src='https://pixabay.com/get/gf3f0e2196a6a2a6041fcf2289921997effb879763b4f0d9ae6a7a1514549c43959ef4e343d970bc3e0c9cfe9eb28d479.jpg'></img>
-                </div>
-                <div className="grid-slider-view">
-                <img className='vid' src="https://pixabay.com/get/g45ca4cfbebe0a84fd0d78ab12a0aaf00a257b3107916710addbcab1d206bb11dda04098778836d0c12888ca76b55b00a.jpg"></img>
-                <img className='vid' src="https://pixabay.com/get/gabff973796e3428ba65810173a8897b5440ecc62f0dfccd9100f5363dccf59662a033ae6a4a69b471e5ee4d81671ce23.jpg"></img>
-                <img className='vid' src="https://pixabay.com/get/g45ca4cfbebe0a84fd0d78ab12a0aaf00a257b3107916710addbcab1d206bb11dda04098778836d0c12888ca76b55b00a.jpg"></img>
-                <img className='vid' src="https://pixabay.com/get/g2342d332c6aca5f60411222374193a358944cf59a1fc84f58260973cc2a484245871e228fc3b270915e098cd6dced8e5.jpg"></img>
-                </div>
+            <section className="h-slider">
+            <p className="h-slider-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde laboriosam sunt ratione ipsa voluptatum.</p>
+            <h1 className="h-slider-title">Lorem ipsum dolor sit amet.</h1>
+            <ul className="power-level">
+              <li className="first-level"><Link href=''>60KV</Link></li>
+              <li className="second-level"><Link href=''>220KV</Link></li>
+              <li className="third-level"><Link href=''>400KV</Link></li>
+            </ul>
+            <div className="h-cards-container">
+            <div className="h-card">
+              <div className="overlay"></div>
+              <img src='https://unsplash.com/photos/eIBTh5DXW9w/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8ZWxlY3RyaWMlMjBwb3dlcnxlbnwwfHx8fDE2ODUyNzU4ODZ8MA&force=true' className="hcard-image"></img>
+              <div className="h-card-info">
+                <p className="h-description" >Lorem ipsum dolor sit amet.</p>
+              <h1 className="h-title">300KVA</h1>
+              </div>
+              <FontAwesomeIcon className='h-card-arrow' icon={faArrowRight} />
             </div>
-            </section>
-          </div>
+            <div className="h-card">
+                <div className="overlay"></div>
+                  <img src='https://unsplash.com/photos/eIBTh5DXW9w/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8ZWxlY3RyaWMlMjBwb3dlcnxlbnwwfHx8fDE2ODUyNzU4ODZ8MA&force=true' className="hcard-image"></img>
+                  <div className="h-card-info">
+                    
+                    <p className="h-description">Lorem ipsum dolor sit amet.</p>
+                  <h1 className="h-title">300KVA</h1>
+                  </div>
+            </div>
+            <div className="h-card">
+              <div className="overlay"></div>
+                  <img src='https://unsplash.com/photos/eIBTh5DXW9w/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8ZWxlY3RyaWMlMjBwb3dlcnxlbnwwfHx8fDE2ODUyNzU4ODZ8MA&force=true' className="hcard-image"></img>
+                  <div className="h-card-info">
+                    
+                    <p className="h-description">Lorem ipsum dolor sit amet.</p>
+                  <h1 className="h-title">300KVA</h1>
+                  </div>
+            </div>
+            <div className="h-card">
+              <div className="overlay"></div>
+                
+                  <img src='https://unsplash.com/photos/eIBTh5DXW9w/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8ZWxlY3RyaWMlMjBwb3dlcnxlbnwwfHx8fDE2ODUyNzU4ODZ8MA&force=true' className="hcard-image"></img>
+                  <div className="h-card-info">
+                    
+                    <p className="h-description">Lorem ipsum dolor sit amet.</p>
+                  <h1 className="h-title">300KVA</h1>
+                  </div>
+            </div>
+            <div className="h-card">
+              <div className="overlay"></div>
+                
+                  <img src='https://unsplash.com/photos/eIBTh5DXW9w/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8ZWxlY3RyaWMlMjBwb3dlcnxlbnwwfHx8fDE2ODUyNzU4ODZ8MA&force=true' className="hcard-image"></img>
+                  <div className="h-card-info">
+                    
+                    <p className="h-description">Lorem ipsum dolor sit amet.</p>
+                  <h1 className="h-title">300KVA</h1>
+                  </div>
+            </div>
+            <div className="h-card">
+              <div className="overlay"></div>
+                
+                  <img src='https://unsplash.com/photos/eIBTh5DXW9w/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8ZWxlY3RyaWMlMjBwb3dlcnxlbnwwfHx8fDE2ODUyNzU4ODZ8MA&force=true' className="hcard-image"></img>
+                  <div className="h-card-info">
+                    
+                    <p className="h-description">Lorem ipsum dolor sit amet.</p>
+                  <h1 className="h-title">300KVA</h1>
+                  </div>
+            </div>
+            </div>
+          </section>
         </main>
         <footer className="footer bkg-black clr-primary">
           <div className="container">
