@@ -1,0 +1,104 @@
+.auth-container {
+  position: relative;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100%;
+}
+
+.auth-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+
+.auth-container .auth-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.auth-container .auth-panel .auth-panel-container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+.auth-container .auth-panel .modal {
+  /* position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%; */
+  display: block;
+  position: relative;
+  max-height: 70%;
+  margin: auto 0;
+}
+.auth-container .overlay {
+  position: absolute;
+  background-color: #1e262b;
+  opacity: 0.95;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+
+.auth-container .auth-slogan {
+  position: absolute;
+  z-index: 3;
+  top: 25%;
+  left: 20vw;
+  height: 15rem;
+  width: 20rem;
+  display: grid;
+}
+
+.auth-container .auth-slogan-img {
+  /* height: 200px;
+  width: 200px; */
+}
+.auth-container .auth-slogan-title {
+  padding: 1rem;
+}
+
+@media screen and (min-width: 800px) {
+  .auth-container .auth-panel {
+    width: 500px;
+    background-color: #1e262b;
+  }
+  .auth-container .overlay {
+    opacity: 0.95;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .auth-container .auth-panel {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .auth-container .auth-slogan {
+    left: 15vw;
+    height: 8rem;
+    width: 12rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .auth-container .auth-slogan {
+    left: 10vw;
+    height: 5rem;
+    width: 8rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+}

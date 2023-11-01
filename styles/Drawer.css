@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.drawer {
+  background-color: #2b3740;
+  position: fixed;
+  right: 0;
+  height: 100%;
+  width: 30%;
+  z-index: 10;
+  /* padding: 1em; */
+  transform: translateX(100%);
+}
+
+.drawer button.close-link {
+  padding: 0 0.5em;
+}
+
+.drawer ul {
+  /* padding: 1em; */
+  width: 100%;
+}
+
+.drawer ul li {
+  padding: 0.8em;
+  cursor: pointer;
+  text-align: center;
+}
+
+.drawer ul li:hover {
+  color: #18ede5;
+}
