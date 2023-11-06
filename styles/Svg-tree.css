@@ -31,6 +31,8 @@
     height: 100%;
     width: 20vw;
   }
+  .svg-tree {
+  }
 }
 @media only screen and (min-width: 1600px) {
   .svg-tree > :first-child {
@@ -41,4 +43,7 @@
     height: 100%;
     width: 20vw;
   }
+  /* .svg-tree > :nth-child(2) > :nth-child(8) {
+    margin-top: 1rem;
+  } */
 }

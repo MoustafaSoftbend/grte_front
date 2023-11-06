@@ -35,7 +35,7 @@ const Navbar = () => {
     drawer.style.transform = "translateX(0%)";
   };
   return (
-    <nav ref={nav} className="top-navigation">
+    <nav ref={nav} className="top-navigation clr-primary">
       <div className="left-navigation p-2 flex justify-start">
         <img
           className="logo-pic"
@@ -57,7 +57,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link href="/" className="button">
+            <Link href="/dashboard" className="button">
               Dash
             </Link>
           </li>
