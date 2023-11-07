@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-<<<<<<< HEAD
 
 * {
   box-sizing: border-box;
@@ -907,5 +906,3 @@ section.h-slider .h-cards-container .h-card:hover .h-card-info .h-card-arrow {
     column-gap: 30vw;
   }
 }
-=======
->>>>>>> 11b0a354006c3f5eb58bca44db0497ca6035d98d

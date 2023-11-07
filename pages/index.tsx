@@ -95,7 +95,6 @@ const Home: NextPage = () => {
   }, [scrollPosition, trigger]);
   return (
     <>
-<<<<<<< HEAD
       <head>
         <link
           rel="stylesheet"
@@ -108,7 +107,6 @@ const Home: NextPage = () => {
         <header className="navbar clr-primary">
           <div className="nav-content relative clr-primary">
             <Navbar />
-
             <div className="showcase z-0">
               <video
                 autoPlay
@@ -248,12 +246,12 @@ const Home: NextPage = () => {
                     href=""
                     className="button button-secondary btn-round m-5 mt-10 font-bold px-10 flex flex-row justify-between"
                   >
-                    {" "}
-                    <p className="text-lg">Meher Shehn</p>{" "}
+                    
+                    <p className="text-lg">Meher Shehn</p>
                     <FontAwesomeIcon
                       className="arrow arrow-primary"
                       icon={faArrowRight}
-                    />{" "}
+                    />
                   </Link>
                 </div>
                 <div className="partner-companies col-span-2 fade-bottom">
@@ -293,65 +291,8 @@ const Home: NextPage = () => {
                     />
                   </div>
                 </div>
-=======
-      <nav className='bg-blue p-0 w-fit h-fit absolute'>
-        <div className="top-navigation flex flex-row justify-between bg-transparent w-auto">
-          <div className='left-navigation p-1 flex justify-start bg-inherit'>
-            <img className='logo-pic w-10 h-10 p-0.5 rounded-full' src='https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'></img>
-            <Link className="logo-name p-0.5" href="/">Sonelgaz TE</Link>
-
-          </div>
-          <div className='right-navigation bg-inherit'>
-            <ul className="flex justify-start">
-              <li><button type="button" className="">Login</button></li>
-              <li>Dash</li>
-            </ul>
-          </div>
-        </div>
-        <div className="showcase relative top-0 left-0 right-0 z-0">
-          <div className="showcase-content w-fit h-fit">
-            <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"></img>
-          </div>
-        </div>
-        <div className="overlay relative top-0 left-0 right-0 bg-blue-50 z-10"></div>
-
-        <div className="nav-body flex flex-row z-10">
-          <div className="left-nav-body flex-row">
-            <h1 className="nav-title color-primary" >Welcome to our company</h1>
-            <div className="stats flex flex-row justify-between">
-              <div className="stats-box">
-                <h3 className="stats-num">21 MWp</h3>
-                <p className="Stat-description">
-                  Energy Production
-                </p>
-              </div>
-              <div className="stats-box">
-                <h3 className="stats-num">211</h3>
-                <p className="Stat-description">
-                  Facilities
-                </p>
-              </div>
-              <div className="stats-box">
-                <h3 className="stats-num">17 MWp</h3>
-                <p className="Stat-description">
-                  Energy Consumption
-                </p>
-              </div>
             </div>
-          </div>
-        </div>
-        <div className="right-nav-body flex-row sm:hidden">
-          <div className="news-slider flex-col">
-            <button className="">Vistes</button>
-            <button className="">Developpement</button>
-          </div>
-          <div className="news-slider-body">
-            <h2 className="color-primary">This the new objectives of the enterprise based on new decisions</h2>
-          </div>
-          <button type="button" className="btn-btn-invisible">Click for reading more</button>
-        </div>
-      </nav >
-
+            
       <section className="flex flex-row">
         <div className="container flex flex-row">
           <div className="card flex flex-col">
@@ -393,11 +334,9 @@ const Home: NextPage = () => {
               <div className="H-card-text">
                 <p>title</p>
                 <h4>1MWP</h4>
->>>>>>> 11b0a354006c3f5eb58bca44db0497ca6035d98d
               </div>
               <button className="round-button"></button>
             </div>
-<<<<<<< HEAD
           </section>
 
           <section className="card-section">
@@ -557,7 +496,6 @@ const Home: NextPage = () => {
                     amet culpa obcaecati deserunt.
                   </p>
                 </div>
-=======
           </div>
           <div className="H-card">
             <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" className="H-card-img"></img>
@@ -565,11 +503,9 @@ const Home: NextPage = () => {
               <div className="H-card-text">
                 <p>title</p>
                 <h4>1MWP</h4>
->>>>>>> 11b0a354006c3f5eb58bca44db0497ca6035d98d
               </div>
               <button className="round-button"></button>
             </div>
-<<<<<<< HEAD
           </section>
 
           <section className="video-section">
@@ -676,7 +612,6 @@ const Home: NextPage = () => {
                     </div>
                   </div>
                 </div>
-=======
           </div>
           <div className="H-card">
             <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" className="H-card-img"></img>
@@ -694,11 +629,9 @@ const Home: NextPage = () => {
               <div className="H-card-text">
                 <p>title</p>
                 <h4>1MWP</h4>
->>>>>>> 11b0a354006c3f5eb58bca44db0497ca6035d98d
               </div>
               <button className="round-button"></button>
             </div>
-<<<<<<< HEAD
           </section>
 
           <section className="h-slider">
@@ -849,7 +782,6 @@ const Home: NextPage = () => {
           </div>
         </footer>
       </div>
-=======
           </div>
         </div>
 
@@ -861,7 +793,6 @@ const Home: NextPage = () => {
           <address className="">700 buraux gue de constantine</address>
         </div>
       </footer>
->>>>>>> 11b0a354006c3f5eb58bca44db0497ca6035d98d
     </>
   );
 };
