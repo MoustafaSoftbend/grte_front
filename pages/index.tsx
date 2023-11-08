@@ -113,7 +113,7 @@ const Home: NextPage = () => {
                 muted
                 loop
                 className="showcase-img"
-                src="https://cdn.pixabay.com/vimeo/585553989/windmill-84625.mp4?rendition=source&expiry=1698850137&hash=8965c8e58650038512369c2a1e564a20af46119d"
+                src="https://cdn.pixabay.com/vimeo/585553989/windmill-84625.mp4?rendition=source&expiry=1699437679&hash=f8f921513a6652e5c39ad27fbf817abf2c28b836"
               ></video>
               <div className="overlay ov-1"></div>
             </div>
