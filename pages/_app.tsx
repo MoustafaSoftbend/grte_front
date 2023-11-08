@@ -3,7 +3,7 @@ import "../styles/Drawer.css";
 import "../styles/LoginModal.css";
 import "../styles/Auth.css";
 import "../styles/globals.css";
-// import "../styles/Dashboard.css";
+import "../styles/Dashboard.css";
 
 import type { AppProps } from "next/app";
 
