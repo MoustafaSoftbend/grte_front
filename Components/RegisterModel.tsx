@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const RegisterModal = () => {
+const RegisterModal = ({ authState, setauthState }) => {
   return (
     <div className="modal p-2">
       <div className="modal-header p-2">
@@ -74,9 +74,16 @@ const RegisterModal = () => {
       </form>
       <div className="modal-footer p-2 flex flex-row">
         <p className="text-md p-2">Already a member</p>
-        <Link href="/" className="Sign-link text-md font-bold p-2 link">
+        <button
+          onClick={(e) => {
+            if (!authState) {
+              setauthState(!authState);
+            }
+          }}
+          className="Sign-link text-md font-bold p-2 link"
+        >
           Sign In
-        </Link>
+        </button>
       </div>
     </div>
   );

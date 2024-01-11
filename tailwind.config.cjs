@@ -6,16 +6,19 @@ module.exports = {
   ],
   theme: {
     extend: {
+      margin: {
+        "big-show": "4em", // Example custom margin value
+      },
       colors: {
-        'color_primary':'#bdd5da'
+        color_primary: "#bdd5da",
       },
       flex: {
-        '2': '2 2 0%'
-      }
+        2: "2 2 0%",
+      },
     },
     grid: {
-      '60/40': '2fr 1fr'
+      "60/40": "2fr 1fr",
     },
   },
   plugins: [],
-}
+};

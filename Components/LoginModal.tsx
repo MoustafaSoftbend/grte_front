@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 const LoginModal = ({ authState, setauthState }) => {
-  const goToLogin = (e) => {
-    if (!authState) {
+  const goToRegister = (e) => {
+    if (authState) {
       setauthState(!authState);
     }
   };
@@ -56,7 +56,7 @@ const LoginModal = ({ authState, setauthState }) => {
       <div className="modal-footer p-2 flex flex-row">
         <p className="text-md p-2">Don't have an account</p>
         <button
-          onClick={(e) => goToLogin(e)}
+          onClick={(e) => goToRegister(e)}
           href="/"
           className="Sign-link text-md font-bold p-2 link"
         >

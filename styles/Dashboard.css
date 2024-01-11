@@ -1,30 +1,116 @@
-.dash-body {
-  display: grid;
-  grid-template-columns: minmax(100px, 1fr) 3fr;
+.dash-component-exit {
+  position: absolute;
+  top: 1rem;
+  margin: 1em;
+  z-index: 4;
+  /* display: none; */
+}
+
+.dash {
+  position: relative;
   height: 100%;
-  background-color: #2b3740;
+}
+.dash .dash-main {
+  display: grid;
+  grid-template-columns: minmax(auto, 4fr) 1fr;
+  z-index: 0;
+  width: 100%;
+}
+
+.dash .dash-main section {
+  position: relative;
+  /* padding: 2px; */
+  /* height: 350px; */
+}
+
+.dash .dash-main section:before {
+  background: linear-gradient(
+    45deg,
+    transparent 5%,
+    rgb(255, 215, 137) 50%,
+    transparent 99%
+  );
+  border-radius: inherit;
+  content: "";
+  inset: 0px;
+  opacity: 0;
+  position: absolute;
+  transition: opacity 400ms;
+  z-index: 1;
+}
+
+.dash .dash-main section:hover:before {
+  opacity: 1;
+}
+
+.dash .dash-main section .section-wrapper {
+  /* top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px; */
+  z-index: 3;
+  /* margin: 1px; */
+  height: 100%;
+  border-radius: inherit;
+  position: relative;
+  display: block;
+  background-color: inherit;
+}
+
+.dash nav .logo-name {
+  display: none;
+}
+
+.dash-body {
+  display: flex;
+  flex-direction: row;
+  /* height: 100%; */
+  /* background-color: aqua; */
+}
+
+.dash-main {
+  flex: 1 1 auto;
+  position: relative;
+  /* height: 100vh; */
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  margin-left: 65px;
+  /* padding: 0.5rem; */
+  gap: 1em;
+  margin-top: 4em;
+  z-index: 0;
 }
 
 .dashboard-drawer {
   padding: 1em 0;
-  position: relative;
+  position: fixed;
   top: 0;
   left: 0;
+  bottom: 0;
   height: 100%;
   background-color: #222831;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  max-height: ;
+  z-index: 1;
+}
+
+.dashboard-drawer .drawers {
+  margin-top: 2.5em;
+  border-bottom: #2b3740 1px solid;
+  height: 100%;
 }
 
 .dashboard-drawer ul {
-  margin-top: 2.5em;
-  margin-left: auto;
-  margin-right: auto;
+  /* margin-left: auto;
+  margin-right: auto; */
   /* padding: 1em; */
+  display: flex;
+  flex-direction: column;
   width: 100%;
 }
+
 .dashboard-drawer ul li {
   padding: 1em;
   display: flex;
@@ -33,16 +119,30 @@
   cursor: pointer;
 }
 
-.dashboard-drawer ul li:hover {
+.dashboard-drawer ul.dash-drawer-items li:hover {
   background-color: #3a404a;
 }
 
-.dashboard-drawer ul li svg,
-.dashboard-drawer ul li a {
-  /* padding-left: 1em; */
+.dash-selected {
+  background-color: #222831;
 }
 
 .dashboard-drawer ul li a {
+  /* padding-left: 1em; */
+  /* padding: 1em; */
+  display: block;
+}
+
+.dashboard-drawer ul.dash-drawer-icon-items {
+  border-right: #2b3740 1px solid;
+}
+
+.dashboard-drawer ul.dash-drawer-icon-items li {
+  font-size: 1em;
+  border-bottom: #2b3740 1px solid;
+}
+
+.dashboard-drawer ul.dash-drawer-items {
   display: none;
 }
 
@@ -65,21 +165,112 @@
   display: none;
 }
 
+section.geo-map {
+  position: relative;
+  /* margin-top: 4em; */
+  background-color: black;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.dash .dash-main section.geo-map .section-wrapper {
+  position: none;
+}
+
+.section-overlay {
+  position: absolute;
+  background-color: black;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.3;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section.table-section {
+  background-color: #222831;
+  border-radius: 10px;
+}
+
+section.table-section .section-wrapper {
+  height: 400px;
+  overflow: hidden;
+}
+
+section.stats-section {
+  /* width: 100vw; */
+  background-color: #222831;
+}
+
+.dash .dash-body .action-menu {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  background-color: #222831;
+  border-radius: 10px;
+  min-height: 93vh;
+}
+
+.dash .dash-body .action-menu .task-menu {
+  background-color: #2b3740;
+  border-radius: 10px;
+  margin-bottom: 2em;
+}
+
+.dash .dash-body .action-menu .task-menu h1.action-menu-title {
+  padding: 0.5em;
+  background-color: #18ede5;
+  color: #000;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.dash .dash-body .action-menu .task-menu .task-list {
+  padding: 0.5em;
+}
+
 @media only screen and (min-width: 800px) {
-  .dashboard-drawer ul li a {
+  .dash nav .logo-name {
+    display: block;
+  }
+
+  .dashboard-drawer ul li svg {
+    padding-left: 0.5em;
+  }
+
+  .dash-body {
+    grid-template-columns: minmax(100px, 1fr) 2fr;
+  }
+}
+
+@media only screen and (max-width: 1800px) {
+  .dash .dash-main {
+    display: block;
+  }
+  .dash .dash-body .action-menu {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .dashboard-drawer {
+    width: 300px;
+  }
+
+  .dashboard-drawer ul.dash-drawer-items {
     display: block;
   }
   .dashboard-drawer ul li {
     justify-content: flex-start;
   }
 
-  .dashboard-drawer ul li svg,
-  .dashboard-drawer ul li a {
-    padding-left: 1em;
-  }
-
-  .dash-body {
-    grid-template-columns: minmax(100px, 1fr) 2fr;
+  .dashboard-drawer .drawers {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
   }
 
   .dashboard-drawer .profile-settings .profile-name,
@@ -92,11 +283,45 @@
     height: 12vw;
     width: 12vw;
   }
+
+  .dash-main {
+    margin-left: 300px;
+  }
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1300px) {
   .dashboard-drawer .profile-settings img.profile-img {
-    height: 120px;
-    width: 120px;
+    height: 160px;
+    width: 160px;
+  }
+}
+
+@media only screen and (max-width: 1450px) {
+  .dash .dash-main section:not(:first-of-type) {
+    height: auto;
+    /* width: auto; */
+  }
+  .dash .dash-main section {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .dash .dash-main {
+    padding: 0;
+  }
+  .dash .dash-main section {
+    width: 85vw;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .dash .dash-main section {
+    width: 80vw;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .dash .dash-main section {
+    width: 78vw;
   }
 }

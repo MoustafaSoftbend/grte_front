@@ -25,14 +25,14 @@ const Home: NextPage = () => {
   var img_src;
   const [trigger, setTrigger] = useState(false);
 
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const [windowWidth, setWindowWidth] = useState(0);
-  const [firstScrollPoint, setFirstScrollPoint] = useState(0);
-  const [secondScrollPoint, setSecondScrollPoint] = useState(0);
-  const [thirdScrollPoint, setThirdScrollPoint] = useState(0);
-  const [position_zero, setPosition_zero] = useState(0);
-  const [position_one, setPosition_one] = useState(0);
-  const [position_two, setPosition_two] = useState(0);
+  // const [scrollPosition, setScrollPosition] = useState(0);
+  // const [windowWidth, setWindowWidth] = useState(0);
+  // const [firstScrollPoint, setFirstScrollPoint] = useState(0);
+  // const [secondScrollPoint, setSecondScrollPoint] = useState(0);
+  // const [thirdScrollPoint, setThirdScrollPoint] = useState(0);
+  // const [position_zero, setPosition_zero] = useState(0);
+  // const [position_one, setPosition_one] = useState(0);
+  // const [position_two, setPosition_two] = useState(0);
 
   const video_click = (e) => {
     const selected = document.querySelector(".vid-selected");
@@ -53,35 +53,35 @@ const Home: NextPage = () => {
     }
   };
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      setScrollPosition(window.scrollY);
-    });
+    // window.addEventListener("scroll", () => {
+    //   setScrollPosition(window.scrollY);
+    // });
 
-    window.addEventListener("resize", () => {
-      setWindowWidth(window.innerWidth);
-    });
+    // window.addEventListener("resize", () => {
+    //   setWindowWidth(window.innerWidth);
+    // });
 
-    setFirstScrollPoint(
-      parseFloat(document.querySelector("header").clientHeight),
-    );
-    setSecondScrollPoint(
-      parseFloat(document.querySelector(".grid-show").clientHeight),
-    );
-    setThirdScrollPoint(
-      parseFloat(document.querySelector(".card-section").clientHeight),
-    );
-    setPosition_zero(parseInt(scrollPosition - firstScrollPoint));
-    setPosition_one(
-      parseInt(scrollPosition - firstScrollPoint - secondScrollPoint),
-    );
-    setPosition_two(
-      parseInt(
-        scrollPosition -
-          firstScrollPoint -
-          secondScrollPoint -
-          thirdScrollPoint,
-      ),
-    );
+    // setFirstScrollPoint(
+    //   parseFloat(document.querySelector("header").clientHeight),
+    // );
+    // setSecondScrollPoint(
+    //   parseFloat(document.querySelector(".grid-show").clientHeight),
+    // );
+    // setThirdScrollPoint(
+    //   parseFloat(document.querySelector(".card-section").clientHeight),
+    // );
+    // setPosition_zero(parseInt(scrollPosition - firstScrollPoint));
+    // setPosition_one(
+    //   parseInt(scrollPosition - firstScrollPoint - secondScrollPoint),
+    // );
+    // setPosition_two(
+    //   parseInt(
+    //     scrollPosition -
+    //       firstScrollPoint -
+    //       secondScrollPoint -
+    //       thirdScrollPoint,
+    //   ),
+    // );
     vid_src = document.querySelector(".vid-selected").childNodes[1].src;
     document.querySelector(".main-vid").remove();
     img_src = document.createElement("img");
@@ -92,28 +92,21 @@ const Home: NextPage = () => {
     fadeObserver(".fade-left");
     fadeObserver(".fade-right");
     fadeObserver(".fade-bottom");
-  }, [scrollPosition, trigger]);
+  }, [trigger]);
   return (
     <>
-      <head>
-        <link
-          rel="stylesheet"
-          href="https://fonts.google.com/download?family=Chivo%20Mono"
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </head>
       <Drawer />
       <div className="layout">
         <header className="navbar clr-primary">
           <div className="nav-content relative clr-primary">
-            <Navbar />
+            <Navbar bg_status={true} />
             <div className="showcase z-0">
               <video
                 autoPlay
                 muted
                 loop
                 className="showcase-img"
-                src="https://cdn.pixabay.com/vimeo/585553989/windmill-84625.mp4?rendition=source&expiry=1699437679&hash=f8f921513a6652e5c39ad27fbf817abf2c28b836"
+                src="https://cdn.pixabay.com/vimeo/585553989/windmill-84625.mp4?rendition=source&expiry=1699440685&hash=51f33d88f1e561690c2cae5973ddade956181039"
               ></video>
               <div className="overlay ov-1"></div>
             </div>
@@ -297,14 +290,14 @@ const Home: NextPage = () => {
           <section className="card-section">
             <div className="c_container relative">
               <SvgTree
-                scrollPosition={scrollPosition}
-                windowWidth={windowWidth}
-                firstScrollPoint={firstScrollPoint}
-                secondScrollPoint={secondScrollPoint}
-                thirdScrollPoint={thirdScrollPoint}
-                position_zero={position_zero}
-                position_one={position_one}
-                position_two={position_two}
+              // scrollPosition={scrollPosition}
+              // windowWidth={windowWidth}
+              // firstScrollPoint={firstScrollPoint}
+              // secondScrollPoint={secondScrollPoint}
+              // thirdScrollPoint={thirdScrollPoint}
+              // position_zero={position_zero}
+              // position_one={position_one}
+              // position_two={position_two}
               />
               <div className="card-section-content">
                 <div className="article relative fade-left">

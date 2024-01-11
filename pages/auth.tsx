@@ -10,7 +10,7 @@ const AuthPage = () => {
 
   return (
     <div className="auth-container clr-primary">
-      <Navbar />
+      <Navbar bg_status={true} />
       <img
         src="https://unsplash.com/photos/V4ZYJZJ3W4M/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8ZW5lcmd5JTIwY29tcGFueXxlbnwwfHx8fDE2OTYyMzQ1MjR8MA&force=true"
         alt=""
@@ -20,7 +20,7 @@ const AuthPage = () => {
       <div className="auth-panel">
         <div className="auth-panel-container">
           {authState ? (
-            <LoginModal props={authState} />
+            <LoginModal authState={authState} setauthState={setauthState} />
           ) : (
             <RegisterModel authState={authState} setauthState={setauthState} />
           )}

@@ -43,16 +43,14 @@ export const svgAnimatiom = () => {
   };
   const rectObserver = new IntersectionObserver((e) => {
     e.forEach((e) => {
-      console.log(e.target.children[0]);
-
       if (!e.isIntersecting && e.intersectionRatio >= 1) {
         e.target.children[0].style.height = 0;
         return;
       }
       e.target.children[0].style.height = `${e.intersectionRatio * 100}%`;
-      if (e.intersectionRatio >= 1) {
-        rectObserver.unobserve(rectangle);
-      }
+      // if (e.intersectionRatio >= 1) {
+      //   rectObserver.unobserve(rectangle);
+      // }
     });
   }, rectObserverOptions);
   rectangle.forEach((rectangle) => {
