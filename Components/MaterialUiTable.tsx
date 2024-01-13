@@ -27,17 +27,31 @@ import { faExpand, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Example = () => {
-  const [isFullscreen, setIsFullscreen] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(true);
 
   const handleFullScreen = () => {
     console.log("Custom button clicked!");
-    setIsFullscreen(!isFullscreen);
-    if (isFullScreen) {
-      document.querySelector(".dash").style.zIndex = 3;
+
+    console.log(isFullscreen);
+
+    const dashElement = document.querySelector(".dash");
+    const dashMainElement = document.querySelector(".dash-main");
+    const muiPaper = document.querySelector(".MuiPaper-root");
+
+    if (isFullscreen) {
+      // Exit full screen
+      dashElement.style.zIndex = 3;
+      dashMainElement.style.zIndex = 3;
+      muiPaper.classList.add("table-fullscreen");
     } else {
-      document.querySelector(".dash").style.zIndex = 0;
+      // Enter full screen
+      dashElement.style.zIndex = 0;
+      dashMainElement.style.zIndex = 0;
+      muiPaper.classList.remove("table-fullscreen");
     }
+    setIsFullscreen(!isFullscreen);
   };
+
   const globalTheme = useTheme(); //(optional) if you already have a theme defined in your app root, you can import here
 
   const tableTheme = useMemo(
@@ -96,10 +110,16 @@ const Example = () => {
           MuiPaper: {
             styleOverrides: {
               root: {
-                width: "100%",
-                "@media (max-width: 600px)": {
-                  display: "block",
-                },
+                // inset: isFullscreen ? 0 : "none", // Fix the syntax here
+                // height: isFullscreen ? "100vh" : "auto",
+                // margin: isFullscreen ? 0 : "none", // Fix the syntax here
+                // maxHeight: isFullscreen ? "100vh" : "100%",
+                // maxWidth: isFullscreen ? "100vw" : "100%",
+                // padding: isFullscreen ? 0 : "none", // Fix the syntax here
+                // position: isFullscreen ? "fixed" : "auto", // Fix the syntax here
+                // width: isFullscreen ? "100vw" : "100%",
+                // zIndex: isFullscreen ? 999 : 0,
+                // // ... other styles
               },
             },
           },
@@ -357,7 +377,7 @@ const Example = () => {
     createDisplayMode: "row", // ('modal', and 'custom' are also available)
     editDisplayMode: "row", // ('modal', 'cell', 'table', and 'custom' are also available)
     enableEditing: true,
-    enableFullScreenToggle: true,
+    enableFullScreenToggle: false,
     onFullScreenChange: (isFullScreen) => {
       if (isFullScreen) {
         document.querySelector(".dash .dash-main").style.zIndex = 3;

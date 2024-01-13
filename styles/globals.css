@@ -166,10 +166,13 @@ input {
 
 .wrapper-x-slider {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   gap: 2em;
   overflow-x: scroll;
   position: relative;
+  height: 100%;
+  width: 100%;
 }
 .wrapper-x-slider::before {
   position: absolute;
@@ -177,6 +180,8 @@ input {
 
 .x-elements {
   cursor: pointer;
+  height: 300px;
+  width: 300px;
 }
 .x-elements:hover {
   background-color: #1e262b;
