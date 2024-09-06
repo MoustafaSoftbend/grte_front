@@ -1,14 +1,15 @@
-import { useForm, SubmitHandler } from "react-hook-form";
-import MuiDrawer from "../Components/MuiDrawer";
+// pages/ouvrage.tsx
+
+import PersistentDrawerLeft from "../Components/MuiDrawer";
+import Divider from "@mui/material/Divider";
 import Image from "next/image";
 
 const OuvrageForm = () => {
   return (
-    <>
-      <MuiDrawer />
+    <PersistentDrawerLeft>
       <div className="ouvrage-profile">
         <div className="ouvrage-profile-img">
-          <Image className="Ouvrage-profile" src="" />
+          <Image className="Ouvrage-profile" src="" alt="Ouvrage Image" />
           <div className="fiche-technique">
             <h1 className="Titre-ouvrage">
               Ligne 220 KV Ain Benian Ouled Fayet
@@ -24,7 +25,7 @@ const OuvrageForm = () => {
       </div>
       <form action="">
         <h1 className="ouvrage-form-title">Détail Géneral</h1>
-        <label htmlFor="AP">
+        <label htmlFor="contrat">
           Contrat N°111/STOS/2021
           <input name="contrat" type="text" className="ouvrage-input" />
         </label>
@@ -48,7 +49,7 @@ const OuvrageForm = () => {
           TYPE
           <input name="TYPE" type="text" className="ouvrage-input" />
         </label>
-        <label htmlFor="Tension (kV)">
+        <label htmlFor="Tension_kV">
           Tension (kV)
           <input name="Tension_kV" type="text" className="ouvrage-input" />
         </label>
@@ -56,11 +57,11 @@ const OuvrageForm = () => {
           NBR
           <input name="NBR" type="text" className="ouvrage-input" />
         </label>
-        <label htmlFor="PUISSANCE MVA">
+        <label htmlFor="PUISSANCE_MVA">
           PUISSANCE MVA
           <input name="PUISSANCE_MVA" type="text" className="ouvrage-input" />
         </label>
-        <label htmlFor="Total puissance">
+        <label htmlFor="Total_puissance">
           Total puissance
           <input name="Total_puissance" type="text" className="ouvrage-input" />
         </label>
@@ -100,8 +101,9 @@ const OuvrageForm = () => {
           GC
           <input name="GC" type="text" className="ouvrage-input" />
         </label>
+        <Divider textAlign="left">LEFT</Divider>
       </form>
-    </>
+    </PersistentDrawerLeft>
   );
 };
 

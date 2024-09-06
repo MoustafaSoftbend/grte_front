@@ -82,7 +82,11 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   justifyContent: "flex-end",
 }));
 
-export default function PersistentDrawerLeft() {
+export default function PersistentDrawerLeft({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -117,6 +121,7 @@ export default function PersistentDrawerLeft() {
             Persistent drawer
           </Typography>
         </Toolbar>
+        {children}
       </AppBar>
       <Drawer
         sx={{
@@ -166,9 +171,8 @@ export default function PersistentDrawerLeft() {
             </ListItem>
           ))}
         </List>
+        <Divider />
       </Drawer>
     </Box>
   );
 }
-
-export default MuiDrawer;
