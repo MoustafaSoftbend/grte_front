@@ -95,6 +95,9 @@ const Home: NextPage = () => {
   }, [trigger]);
   return (
     <>
+      <Head>
+        <title>Energy is the future</title>
+      </Head>
       <Drawer />
       <div className="layout">
         <header className="navbar clr-primary">

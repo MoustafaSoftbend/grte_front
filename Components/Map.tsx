@@ -4,6 +4,7 @@ import { HexagonLayer } from "@deck.gl/aggregation-layers";
 import DeckGL from "@deck.gl/react";
 import { GeoJsonLayer } from "@deck.gl/layers";
 // import { loadGeoJSON } from "../utils/geoJsonParser";
+import Head from "next/head";
 
 // import "mapbox-gl/dist/mapbox-gl.css";
 import {
