@@ -21,7 +21,7 @@ import SvgTree from "../Components/SvgTree";
 import { fadeObserver } from "../utils/fadeObservers";
 
 const Home: NextPage = () => {
-  var vid_src;
+  const vid_src = useRef(null);;
   var img_src;
   const [trigger, setTrigger] = useState(false);
 
@@ -82,7 +82,7 @@ const Home: NextPage = () => {
     //       thirdScrollPoint,
     //   ),
     // );
-    vid_src = document.querySelector(".vid-selected").childNodes[1].src;
+    vid_src.current = document.querySelector(".vid-selected").childNodes[1].src;
     document.querySelector(".main-vid").remove();
     img_src = document.createElement("img");
     img_src.src = vid_src;

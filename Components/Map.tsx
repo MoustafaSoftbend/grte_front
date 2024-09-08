@@ -28,9 +28,20 @@ import {
 
 // const geojsonData = loadGeoJSON("../utils/electric-network-algeria.geojson");
 // console.log(geoJsonData);
+type GeoJsonData = {
+  type: string;
+  features: Array<{
+    type: string;
+    properties: { [key: string]: any };
+    geometry: {
+      type: string;
+      coordinates: number[][][];
+    };
+  }>;
+};
 
 const GeolocalisationMap = () => {
-  const [geoJsonData, setGeojsonData] = useState({});
+  const [geoJsonData, setGeojsonData] = useState<GeoJsonData>({ type: "", features: [] });
   const dispatch = useDispatch();
   const dash = useSelector(selectDashState);
   const { dashElReference, previewDisplay } = dash;
