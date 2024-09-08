@@ -52,15 +52,22 @@
     "@faker-js/faker": "^8.3.1",
     "@svgr/webpack": "^8.1.0",
     "@types/imagesloaded": "^4.1.2",
-    "@types/node": "18.0.1",
-    "@types/react": "18.0.14",
+    "@types/node": "^22.5.4",
+    "@types/react": "^18.3.5",
     "@types/react-dom": "18.0.5",
+    "@typescript-eslint/eslint-plugin": "^8.4.0",
+    "@typescript-eslint/parser": "^8.4.0",
     "autoprefixer": "^10.4.12",
-    "eslint": "8.19.0",
+    "eslint": "^9.10.0",
     "eslint-config-next": "^13.0.4",
     "Faker": "^0.7.2",
     "postcss": "^8.4.18",
     "tailwindcss": "^3.1.8",
-    "typescript": "^5.3.2"
+    "typescript": "^5.3.2",
+    "eslint-plugin-next": "^0.0.0",
+    "eslint-plugin-react": "^7.35.2",
+    "postcss": "^8.4.18",
+    "tailwindcss": "^3.1.8",
+    "typescript": "^5.5.4"
   }
 }
