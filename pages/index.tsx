@@ -21,7 +21,7 @@ import SvgTree from "../Components/SvgTree";
 import { fadeObserver } from "../utils/fadeObservers";
 
 const Home: NextPage = () => {
-  const vid_src = useRef(null);;
+  const vid_src:any = useRef(null);;
   var img_src;
   const [trigger, setTrigger] = useState(false);
 
@@ -34,7 +34,7 @@ const Home: NextPage = () => {
   // const [position_one, setPosition_one] = useState(0);
   // const [position_two, setPosition_two] = useState(0);
 
-  const video_click = (e) => {
+  const video_click = (e:any) => {
     const selected = document.querySelector(".vid-selected");
     setTrigger(!trigger);
     if (selected) {
@@ -44,12 +44,12 @@ const Home: NextPage = () => {
       e.target.parentElement.classList.add("vid-selected");
     } else {
       e.target.classList.add("vid-selected");
-      vid_src = document.querySelector(".vid-selected").childNodes[1].src;
-      document.querySelector(".main-vid").remove();
+      vid_src = (document.querySelector(".vid-selected") as any).childNodes[1].src;
+      (document.querySelector(".main-vid") as any).remove();
       img_src = document.createElement("img");
       img_src.src = vid_src;
       img_src.classList.add("main-vid");
-      document.querySelector(".main-grid-view").appendChild(img_src);
+      (document.querySelector(".main-grid-view") as any).appendChild(img_src);
     }
   };
   useEffect(() => {
@@ -82,12 +82,12 @@ const Home: NextPage = () => {
     //       thirdScrollPoint,
     //   ),
     // );
-    vid_src.current = document.querySelector(".vid-selected").childNodes[1].src;
-    document.querySelector(".main-vid").remove();
+    vid_src.current = (document.querySelector(".vid-selected")as any).childNodes[1].src;
+    (document.querySelector(".main-vid")as any).remove();
     img_src = document.createElement("img");
     img_src.src = vid_src;
     img_src.classList.add("main-vid");
-    document.querySelector(".main-grid-view").appendChild(img_src);
+    (document.querySelector(".main-grid-view")as any).appendChild(img_src);
 
     fadeObserver(".fade-left");
     fadeObserver(".fade-right");
