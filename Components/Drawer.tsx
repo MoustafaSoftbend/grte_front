@@ -11,7 +11,7 @@ import {
 const Drawer = () => {
   const HandleCloseMenu = (): void => {
     const drawer = document.querySelector(".drawer") as HTMLElement | null;
-    drawer.style.transform = "translateX(100%)";
+    drawer!.style.transform = "translateX(100%)";
   };
   return (
     <div className="drawer clr-primary ml-2">
