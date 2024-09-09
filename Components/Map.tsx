@@ -121,7 +121,6 @@ const GeolocalisationMap = () => {
           <button
             type="button"
             className="dash-component-exit"
-            href=""
             onClick={(e) => exitDahElement(e)}
           >
             <FontAwesomeIcon size="2xl" icon={faArrowLeft} />

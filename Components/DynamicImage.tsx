@@ -1,9 +1,9 @@
 import Image from 'next/image';
 
-const DynamicImage = ({ src, alt="" }) => {
+const DynamicImage = ({ src: any, alt="" }) => {
   return (
     <img
-      src={src}
+      src={src as any}
       alt={alt}
     ></img>
   );

@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-const LoginModal = ({ authState, setauthState }) => {
-  const goToRegister = (e) => {
+const LoginModal = ({ authState: any, setauthState: any }) => {
+  const goToRegister = () : void => {
     if (authState) {
       setauthState(!authState);
     }

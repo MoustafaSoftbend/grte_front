@@ -34,18 +34,18 @@ const Example = () => {
 
     console.log(isFullscreen);
 
-    const dashElement = document.querySelector(".dash");
-    const dashMainElement = document.querySelector(".dash-main");
-    const muiPaper = document.querySelector(".MuiPaper-root");
+    const dashElement = document.querySelector(".dash") as HTMLElement;
+    const dashMainElement = document.querySelector(".dash-main") as HTMLElement;
+    const muiPaper = document.querySelector(".MuiPaper-root") as HTMLElement;
 
     if (isFullscreen) {
       // Exit full screen
-      dashElement.style.zIndex = 3;
-      dashMainElement.style.zIndex = 3;
+      dashElement.style.zIndex= 3;
+      dashMainElement.style.zIndex= 3;
       muiPaper.classList.add("table-fullscreen");
     } else {
       // Enter full screen
-      dashElement.style.zIndex = 0;
+      dashElement.style.zIndex= 0;
       dashMainElement.style.zIndex = 0;
       muiPaper.classList.remove("table-fullscreen");
     }
