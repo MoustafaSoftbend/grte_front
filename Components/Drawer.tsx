@@ -18,7 +18,6 @@ const Drawer = () => {
       <button
         onClick={HandleCloseMenu}
         className="close-link text-title"
-        href=""
       >
         <FontAwesomeIcon className="close-button" icon={faXmark} />
       </button>
