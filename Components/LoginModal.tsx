@@ -60,8 +60,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ authState, setauthState}) => {
       <div className="modal-footer p-2 flex flex-row">
         <p className="text-md p-2">Don't have an account</p>
         <button
-          onClick={(e) => goToRegister(e)}
-          href="/"
+          onClick={() => goToRegister()}
           className="Sign-link text-md font-bold p-2 link"
         >
           Register
