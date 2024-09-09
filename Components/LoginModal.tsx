@@ -1,7 +1,7 @@
 import Link from "next/link";
 interface LoginModalProps {
   authState: authState;
-  setauthState: (state: AuthState) => void;
+  setauthState: (state: authState) => void;
 }
 
 const LoginModal: React.FC<LoginModalProps> = ({ authState, setauthState}) => {
