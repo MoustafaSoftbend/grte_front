@@ -1,6 +1,12 @@
 import Image from 'next/image';
 
-const DynamicImage = ({ src: any, alt="" }) => {
+interface DynamicImageProps {
+  src: string;
+  alt?: string;
+}
+
+
+const DynamicImage: React.FC<DynamicImageProps>  = ({ src, alt="" }) => {
   return (
     <img
       src={src as any}
