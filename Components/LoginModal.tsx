@@ -1,6 +1,10 @@
 import Link from "next/link";
+interface LoginModalProps {
+  authState: AuthState;
+  setauthState: (state: AuthState) => void;
+}
 
-const LoginModal = ({ authState: any, setauthState: any }) => {
+const LoginModal: React.FC<LoginModalProps> = ({ authState, setauthState}) => {
   const goToRegister = () : void => {
     if (authState) {
       setauthState(!authState);
