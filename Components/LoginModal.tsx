@@ -1,6 +1,6 @@
 import Link from "next/link";
 interface LoginModalProps {
-  authState: AuthState;
+  authState: authState;
   setauthState: (state: AuthState) => void;
 }
 
