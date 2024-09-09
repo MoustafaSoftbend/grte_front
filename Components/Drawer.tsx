@@ -9,14 +9,14 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const Drawer = () => {
-  const HandleCloseMenu = (e) => {
+  const HandleCloseMenu = () => {
     const drawer = document.querySelector(".drawer");
     drawer.style.transform = "translateX(100%)";
   };
   return (
     <div className="drawer clr-primary ml-2">
       <button
-        onClick={(e) => HandleCloseMenu(e)}
+        onClick={() => HandleCloseMenu()}
         className="close-link text-title"
         href=""
       >
