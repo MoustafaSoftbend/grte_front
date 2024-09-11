@@ -41,12 +41,15 @@ type GeoJsonData = {
 };
 
 const GeolocalisationMap = () => {
-  const [geoJsonData, setGeojsonData] = useState<GeoJsonData>({ type: "", features: [] });
+  const [geoJsonData, setGeojsonData] = useState<GeoJsonData>({
+    type: "",
+    features: [],
+  });
   const dispatch = useDispatch();
   const dash = useSelector(selectDashState);
   const { dashElReference, previewDisplay } = dash;
 
-  const exitDahElement = (e) => {
+  const exitDahElement = (e: any) => {
     dispatch(setDashNavigationState(null));
     dispatch(setPreviewDisplay(true));
     dispatch(setLastActionTrigger("dashElement"));

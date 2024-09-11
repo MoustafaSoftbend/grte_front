@@ -20,7 +20,7 @@ const StatsBox = () => {
 
   const [visual, setVisual] = useState("BarChart");
 
-  const exitDahElement = (e) => {
+  const exitDahElement = (e: any) => {
     dispatch(setDashNavigationState(null));
     dispatch(setPreviewDisplay(true));
     dispatch(setLastActionTrigger("dashElement"));
@@ -29,8 +29,6 @@ const StatsBox = () => {
       e.style.display = "block";
     });
   };
-
-  const selectVisual = (e) => {};
 
   return (
     <div className={`section-wrapper h-fit ${previewDisplay ? "" : ""}`}>
