@@ -1,7 +1,4 @@
-declare module "deck.gl" {
-  export class Deck {
-    constructor(props: any);
-    setProps(props: any): void;
-    finalize(): void;
-  }
+declare module "@deck.gl/react" {
+  import * as React from "react";
+  export default class DeckGL extends React.Component<any> {}
 }
