@@ -10,6 +10,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@deck.gl/aggregation-layers": "^9.0.29",
+    "@deck.gl/core": "^9.0.29",
+    "@deck.gl/layers": "^9.0.29",
+    "@deck.gl/react": "^9.0.29",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-brands-svg-icons": "^6.4.2",
     "@fortawesome/free-regular-svg-icons": "^6.4.2",
@@ -23,7 +27,6 @@
     "@tanstack/react-query": "^5.55.4",
     "axios": "^1.6.2",
     "chart.js": "^4.4.0",
-    "deck.gl": "^8.9.36",
     "faker": "npm:Faker@^0.7.2",
     "fs": "^0.0.1-security",
     "geojson-parser": "^1.0.1",
