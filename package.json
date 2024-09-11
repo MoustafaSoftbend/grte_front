@@ -10,10 +10,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@deck.gl/aggregation-layers": "^9.0.29",
-    "@deck.gl/core": "^9.0.29",
-    "@deck.gl/layers": "^9.0.29",
-    "@deck.gl/react": "^9.0.29",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-brands-svg-icons": "^6.4.2",
     "@fortawesome/free-regular-svg-icons": "^6.4.2",
