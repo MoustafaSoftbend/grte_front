@@ -46,8 +46,8 @@ const Example = () => {
 
     if (isFullscreen) {
       // Exit full screen
-      dashElement.style.zIndex = 3;
-      dashMainElement.style.zIndex = 3;
+      dashElement.style.zIndex = "3";
+      dashMainElement.style.zIndex = "3";
       muiPaper.classList.add("table-fullscreen");
     } else {
       // Enter full screen
