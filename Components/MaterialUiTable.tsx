@@ -51,8 +51,8 @@ const Example = () => {
       muiPaper.classList.add("table-fullscreen");
     } else {
       // Enter full screen
-      dashElement.style.zIndex = 0;
-      dashMainElement.style.zIndex = 0;
+      dashElement.style.zIndex = "0";
+      dashMainElement.style.zIndex = "0";
       muiPaper.classList.remove("table-fullscreen");
     }
     setIsFullscreen(!isFullscreen);
