@@ -15,7 +15,14 @@ import {
   useQuery,
   useQueryClient,
 } from "@tanstack/react-query";
-import { type User, fakeData, usStates } from "../utils/MakeData";
+type User = {
+  id: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  state: string;
+};
+import { fakeData, usStates } from "../utils/MakeData";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 

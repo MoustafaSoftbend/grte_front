@@ -1,10 +1,17 @@
-// makeData.js
-
+// makeData.ts
 import { faker } from "@faker-js/faker";
-// import faker from "faker";
+
+// Define the User type
+export type User = {
+  id: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  state: string;
+};
 
 // Function to generate fake user data
-const generateFakeUser = () => ({
+const generateFakeUser = (): User => ({
   id: faker.datatype.uuid(),
   firstName: faker.name.firstName(),
   lastName: faker.name.lastName(),
