@@ -101,121 +101,125 @@ const Example = () => {
           },
         },
 
-        components: {
-          MuiTooltip: {
-            styleOverrides: {
-              tooltip: {
-                fontSize: "1.1rem", //override to make tooltip font size larger
-                "@media (max-width: 600px)": {
-                  fontSize: "0.8rem",
-                },
+      //   components: {
+      //     palette: {
+      //   mode: globalTheme.palette.mode, // Use the same dark/light mode as the global theme
+      //   primary: globalTheme.palette.secondary, // Swap in the secondary color as primary
+      //   info: {
+      //     main: "rgb(255,122,0)", // Custom color for info
+      //   },
+      //   background: {
+      //     default: globalTheme.palette.mode === "dark" ? "rgb(254,255,244)" : "#2b3740", // Custom background colors
+      //   },
+      //   secondary: {
+      //     main: "rgb(247, 183, 65)", // Change secondary color
+      //   },
+      //   text: {
+      //     primary: "#ffffff", // Font color
+      //     secondary: "#757575", // Secondary font color
+      //   },
+      // },
+      // typography: {
+      //   button: {
+      //     textTransform: "none", // Button typography styles
+      //     fontSize: "1.2rem",
+      //   },
+      // },
+      components: {
+        MuiTooltip: {
+          styleOverrides: {
+            tooltip: {
+              fontSize: "1.1rem", // Tooltip font size
+              "@media (max-width: 600px)": {
+                fontSize: "0.8rem",
               },
             },
           },
-
-          MuiPaper: {
-            styleOverrides: {
-              root: {
-                // inset: isFullscreen ? 0 : "none", // Fix the syntax here
-                // height: isFullscreen ? "100vh" : "auto",
-                // margin: isFullscreen ? 0 : "none", // Fix the syntax here
-                // maxHeight: isFullscreen ? "100vh" : "100%",
-                // maxWidth: isFullscreen ? "100vw" : "100%",
-                // padding: isFullscreen ? 0 : "none", // Fix the syntax here
-                // position: isFullscreen ? "fixed" : "auto", // Fix the syntax here
-                // width: isFullscreen ? "100vw" : "100%",
-                // zIndex: isFullscreen ? 999 : 0,
-                // // ... other styles
+        },
+        MuiPaper: {
+          styleOverrides: {
+            root: {
+              // Update styles as needed
+            },
+          },
+        },
+        MuiTable: {
+          styleOverrides: {
+            root: {
+              zIndex: 1500, // Custom z-index
+            },
+          },
+        },
+        MuiTableBody: {
+          styleOverrides: {
+            root: {
+              "@media (max-width:600px)": {
+                display: "block", // Table body display for mobile
               },
             },
           },
-
-          MuiTable: {
-            styleOverrides: {
-              root: {
-                zIndex: 1500, // Your custom z-index value
+        },
+        MuiTableHead: {
+          styleOverrides: {
+            root: {
+              width: "100%",
+              "@media (max-width:600px)": {
+                display: "none",
               },
             },
           },
-          MuiTableBody: {
-            styleOverrides: {
-              root: {
-                "@media (max-width:600px)": {
-                  display: "block", // Make the table body a block element
-                },
+        },
+        MuiTableRow: {
+          styleOverrides: {
+            root: {
+              "&.MuiTableRow-root:nth-of-type(even)": {
+                backgroundColor: "#345160 !important",
               },
-            },
-          },
-          MuiBox: {
-            styleOverrides: {
-              root: {
-                justifyContent: "flex-start",
-              },
-            },
-          },
-          MuiTableHead: {
-            styleOverrides: {
-              root: {
+              display: "table-row", // Default display
+              "@media (max-width:600px)": {
+                display: "grid", // Display for mobile
                 width: "100%",
-                "@media (max-width:600px)": {
-                  display: "none",
-                },
               },
             },
           },
-          MuiTableRow: {
-            styleOverrides: {
-              root: {
-                "&.MuiTableRow-root:nth-of-type(even)": {
-                  backgroundColor: "#345160 !important",
-                },
-                display: "table-row", // Ensure the default display is 'table-row'
-                "@media (max-width:600px)": {
-                  display: "grid", // Change display to 'inline-flex' in the media query
-                  width: "100%", // Make rows take full width in inline mode
-                },
+        },
+        MuiTableCell: {
+          styleOverrides: {
+            root: {
+              "@media (max-width:600px)": {
+                width: "100%", // Cell width for mobile
+                border: "none",
               },
             },
           },
-          MuiTableCell: {
-            styleOverrides: {
-              root: {
-                "@media (max-width:600px)": {
-                  width: "100%", // Make rows take full width in inline mode
-                  border: "none",
-                },
+        },
+        MuiTableCellHead: {
+          styleOverrides: {
+            root: {
+              "@media (max-width:600px)": {
+                display: "block", // Header cell display for mobile
+                fontWeight: "bold",
+                marginRight: "16px",
               },
             },
           },
-          MuiTableCellHead: {
-            styleOverrides: {
-              root: {
-                "@media (max-width:600px)": {
-                  display: "block", // Make each table header cell inline on small mobile screens
-                  fontWeight: "bold", // Adjust header cell styling as needed
-                  marginRight: "16px", // Adjust spacing between header cells as needed
-                },
-              },
+        },
+        MuiMenu: {
+          styleOverrides: {
+            paper: {
+              backgroundColor: globalTheme.palette.mode === "dark" ? "#333" : "white",
+              color: globalTheme.palette.mode === "dark" ? "white" : "black",
             },
           },
-          MuiMenu: {
-            styleOverrides: {
-              paper: {
-                backgroundColor:
-                  globalTheme.palette.mode === "dark"
-                    ? "#333" // Set your dark background color for the menu
-                    : "white", // Set your light background color for the menu
-                color: globalTheme.palette.mode === "dark" ? "white" : "black", // Set text color
-              },
+        },
+        MuiSwitch: {
+          styleOverrides: {
+            thumb: {
+              color: "#18ede5", // Switch thumb color
             },
           },
-          MuiSwitch: {
-            styleOverrides: {
-              thumb: {
-                color: "#18ede5", //change the color of the switch thumb in the columns show/hide menu to pink
-              },
-            },
-          },
+        },
+      },
         },
       }),
 
