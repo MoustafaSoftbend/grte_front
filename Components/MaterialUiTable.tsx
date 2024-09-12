@@ -6,7 +6,6 @@ import {
   type MRT_Row,
   type MRT_TableOptions,
   useMaterialReactTable,
-  FullScreenButton,
 } from "material-react-table";
 import { Box, Button, IconButton, Tooltip } from "@mui/material";
 import {
@@ -40,12 +39,12 @@ const Example = () => {
 
     if (isFullscreen) {
       // Exit full screen
-      dashElement.style.zIndex= 3;
-      dashMainElement.style.zIndex= 3;
+      dashElement.style.zIndex = 3;
+      dashMainElement.style.zIndex = 3;
       muiPaper.classList.add("table-fullscreen");
     } else {
       // Enter full screen
-      dashElement.style.zIndex= 0;
+      dashElement.style.zIndex = 0;
       dashMainElement.style.zIndex = 0;
       muiPaper.classList.remove("table-fullscreen");
     }
@@ -213,7 +212,7 @@ const Example = () => {
         },
       }),
 
-    [globalTheme],
+    [globalTheme]
   );
 
   const [validationErrors, setValidationErrors] = useState<
@@ -315,7 +314,7 @@ const Example = () => {
         },
       },
     ],
-    [validationErrors],
+    [validationErrors]
   );
 
   //call CREATE hook
@@ -479,7 +478,7 @@ function useCreateUser() {
               ...newUserInfo,
               id: (Math.random() + 1).toString(36).substring(7),
             },
-          ] as User[],
+          ] as User[]
       );
     },
     // onSettled: () => queryClient.invalidateQueries({ queryKey: ['users'] }), //refetch users after mutation, disabled for demo
@@ -510,12 +509,10 @@ function useUpdateUser() {
     },
     //client side optimistic update
     onMutate: (newUserInfo: User) => {
-      queryClient.setQueryData(
-        ["users"],
-        (prevUsers: any) =>
-          prevUsers?.map((prevUser: User) =>
-            prevUser.id === newUserInfo.id ? newUserInfo : prevUser,
-          ),
+      queryClient.setQueryData(["users"], (prevUsers: any) =>
+        prevUsers?.map((prevUser: User) =>
+          prevUser.id === newUserInfo.id ? newUserInfo : prevUser
+        )
       );
     },
     // onSettled: () => queryClient.invalidateQueries({ queryKey: ['users'] }), //refetch users after mutation, disabled for demo
@@ -533,10 +530,8 @@ function useDeleteUser() {
     },
     //client side optimistic update
     onMutate: (userId: string) => {
-      queryClient.setQueryData(
-        ["users"],
-        (prevUsers: any) =>
-          prevUsers?.filter((user: User) => user.id !== userId),
+      queryClient.setQueryData(["users"], (prevUsers: any) =>
+        prevUsers?.filter((user: User) => user.id !== userId)
       );
     },
     // onSettled: () => queryClient.invalidateQueries({ queryKey: ['users'] }), //refetch users after mutation, disabled for demo
@@ -560,7 +555,7 @@ const validateEmail = (email: string) =>
   email
     .toLowerCase()
     .match(
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     );
 
 function validateUser(user: User) {
