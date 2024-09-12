@@ -64,165 +64,128 @@ const Example = () => {
     () =>
       createTheme({
         palette: {
-          mode: globalTheme.palette.mode, //let's use the same dark/light mode as the global theme
-
-          primary: globalTheme.palette.secondary, //swap in the secondary color as the primary for the table
-
+          mode: globalTheme.palette.mode, // Use the same dark/light mode as the global theme
+          primary: globalTheme.palette.secondary, // Swap in the secondary color as primary
           info: {
-            main: "rgb(255,122,0)", //add in a custom color for the toolbar alert background stuff
+            main: "rgb(255,122,0)", // Custom color for info
           },
-
           background: {
             default:
               globalTheme.palette.mode === "dark"
-                ? "rgb(254,255,244)" //random light yellow color for the background in light mode
-                : "#2b3740", //pure black table in dark mode for fun
+                ? "rgb(254,255,244)"
+                : "#2b3740", // Custom background colors
           },
-          // primary: {
-          //   main: "#18ede5", // Change the primary color
-          // },
           secondary: {
-            main: "rgb(247, 183, 65)", // Change the secondary color
+            main: "rgb(247, 183, 65)", // Change secondary color
           },
-          // background: {
-          //   default: "#121212", // Change the default background color
-          //   paper: "#212121", // Change the paper background color
-          // },
           text: {
-            primary: "#ffffff", // Change the font color
-            secondary: "#757575", // Change the secondary font color
+            primary: "#ffffff", // Font color
+            secondary: "#757575", // Secondary font color
           },
         },
-
         typography: {
           button: {
-            textTransform: "none", //customize typography styles for all buttons in table by default
+            textTransform: "none", // Button typography styles
             fontSize: "1.2rem",
           },
         },
-
-      //   components: {
-      //     palette: {
-      //   mode: globalTheme.palette.mode, // Use the same dark/light mode as the global theme
-      //   primary: globalTheme.palette.secondary, // Swap in the secondary color as primary
-      //   info: {
-      //     main: "rgb(255,122,0)", // Custom color for info
-      //   },
-      //   background: {
-      //     default: globalTheme.palette.mode === "dark" ? "rgb(254,255,244)" : "#2b3740", // Custom background colors
-      //   },
-      //   secondary: {
-      //     main: "rgb(247, 183, 65)", // Change secondary color
-      //   },
-      //   text: {
-      //     primary: "#ffffff", // Font color
-      //     secondary: "#757575", // Secondary font color
-      //   },
-      // },
-      // typography: {
-      //   button: {
-      //     textTransform: "none", // Button typography styles
-      //     fontSize: "1.2rem",
-      //   },
-      // },
-      components: {
-        MuiTooltip: {
-          styleOverrides: {
-            tooltip: {
-              fontSize: "1.1rem", // Tooltip font size
-              "@media (max-width: 600px)": {
-                fontSize: "0.8rem",
+        components: {
+          MuiTooltip: {
+            styleOverrides: {
+              tooltip: {
+                fontSize: "1.1rem", // Tooltip font size
+                "@media (max-width: 600px)": {
+                  fontSize: "0.8rem",
+                },
               },
             },
           },
-        },
-        MuiPaper: {
-          styleOverrides: {
-            root: {
-              // Update styles as needed
-            },
-          },
-        },
-        MuiTable: {
-          styleOverrides: {
-            root: {
-              zIndex: 1500, // Custom z-index
-            },
-          },
-        },
-        MuiTableBody: {
-          styleOverrides: {
-            root: {
-              "@media (max-width:600px)": {
-                display: "block", // Table body display for mobile
+          MuiPaper: {
+            styleOverrides: {
+              root: {
+                // Update styles as needed
               },
             },
           },
-        },
-        MuiTableHead: {
-          styleOverrides: {
-            root: {
-              width: "100%",
-              "@media (max-width:600px)": {
-                display: "none",
+          MuiTable: {
+            styleOverrides: {
+              root: {
+                zIndex: 1500, // Custom z-index
               },
             },
           },
-        },
-        MuiTableRow: {
-          styleOverrides: {
-            root: {
-              "&.MuiTableRow-root:nth-of-type(even)": {
-                backgroundColor: "#345160 !important",
+          MuiTableBody: {
+            styleOverrides: {
+              root: {
+                "@media (max-width:600px)": {
+                  display: "block", // Table body display for mobile
+                },
               },
-              display: "table-row", // Default display
-              "@media (max-width:600px)": {
-                display: "grid", // Display for mobile
+            },
+          },
+          MuiTableHead: {
+            styleOverrides: {
+              root: {
                 width: "100%",
+                "@media (max-width:600px)": {
+                  display: "none",
+                },
               },
             },
           },
-        },
-        MuiTableCell: {
-          styleOverrides: {
-            root: {
-              "@media (max-width:600px)": {
-                width: "100%", // Cell width for mobile
-                border: "none",
+          MuiTableRow: {
+            styleOverrides: {
+              root: {
+                "&.MuiTableRow-root:nth-of-type(even)": {
+                  backgroundColor: "#345160 !important",
+                },
+                display: "table-row", // Default display
+                "@media (max-width:600px)": {
+                  display: "grid", // Display for mobile
+                  width: "100%",
+                },
               },
             },
           },
-        },
-        MuiTableCellHead: {
-          styleOverrides: {
-            root: {
-              "@media (max-width:600px)": {
-                display: "block", // Header cell display for mobile
-                fontWeight: "bold",
-                marginRight: "16px",
+          MuiTableCell: {
+            styleOverrides: {
+              root: {
+                "@media (max-width:600px)": {
+                  width: "100%", // Cell width for mobile
+                  border: "none",
+                },
               },
             },
           },
-        },
-        MuiMenu: {
-          styleOverrides: {
-            paper: {
-              backgroundColor: globalTheme.palette.mode === "dark" ? "#333" : "white",
-              color: globalTheme.palette.mode === "dark" ? "white" : "black",
+          MuiTableCellHead: {
+            styleOverrides: {
+              root: {
+                "@media (max-width:600px)": {
+                  display: "block", // Header cell display for mobile
+                  fontWeight: "bold",
+                  marginRight: "16px",
+                },
+              },
             },
           },
-        },
-        MuiSwitch: {
-          styleOverrides: {
-            thumb: {
-              color: "#18ede5", // Switch thumb color
+          MuiMenu: {
+            styleOverrides: {
+              paper: {
+                backgroundColor:
+                  globalTheme.palette.mode === "dark" ? "#333" : "white",
+                color: globalTheme.palette.mode === "dark" ? "white" : "black",
+              },
             },
           },
-        },
-      },
+          MuiSwitch: {
+            styleOverrides: {
+              thumb: {
+                color: "#18ede5", // Switch thumb color
+              },
+            },
+          },
         },
       }),
-
     [globalTheme]
   );
 
