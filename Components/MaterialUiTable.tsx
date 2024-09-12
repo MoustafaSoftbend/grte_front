@@ -78,9 +78,9 @@ const Example = () => {
                 ? "rgb(254,255,244)" //random light yellow color for the background in light mode
                 : "#2b3740", //pure black table in dark mode for fun
           },
-          primary: {
-            main: "#18ede5", // Change the primary color
-          },
+          // primary: {
+          //   main: "#18ede5", // Change the primary color
+          // },
           secondary: {
             main: "rgb(247, 183, 65)", // Change the secondary color
           },
