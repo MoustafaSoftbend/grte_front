@@ -155,11 +155,8 @@ const Example = () => {
                   border: "none",
                 },
               },
-            },
-          },
-          MuiTableCellHead: {
-            styleOverrides: {
-              root: {
+              // Apply styles specifically for header cells
+              head: {
                 "@media (max-width:600px)": {
                   display: "block", // Header cell display for mobile
                   fontWeight: "bold",
@@ -168,6 +165,7 @@ const Example = () => {
               },
             },
           },
+
           MuiMenu: {
             styleOverrides: {
               paper: {
