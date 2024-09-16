@@ -354,15 +354,14 @@ const Example = () => {
     enableFullScreenToggle: false,
     onIsFullScreenChange: (isFullScreen) => {
       const element = document.querySelector(".dash .dash-main");
+      if (element) {
       if (isFullScreen) {
-        if (element) {
         element.querySelector(".dash .dash-main").style.zIndex = 3;
-        }
       } else {
-        if (element) {
         element.querySelector(".dash .dash-main").style.zIndex = 0;
-        }
       }
+    }
+
       console.log("Full screen", isFullScreen);
     },
     getRowId: (row) => row.id,
