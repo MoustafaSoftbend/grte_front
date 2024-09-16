@@ -102,7 +102,7 @@ const Navbar: React.FC<NavbarProps> = ({ bg_status}) => {
             </li>
             <li>
               <button
-                onClick={(e) => handleMenu(e)}
+                onClick={() => handleMenu()}
                 className="button hamburger"
               >
                 <FontAwesomeIcon icon={faBars} />
