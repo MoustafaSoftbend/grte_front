@@ -39,7 +39,7 @@ const Navbar: React.FC<NavbarProps> = ({ bg_status}) => {
     });
     console.log(scroll);
     if (!bg_status) {
-      const element = document.querySelector(".action-menu")
+      const element = document.querySelector(".action-menu") as HTMLElement
       if(element) {
         element.style.translateY = "400px";
       }
