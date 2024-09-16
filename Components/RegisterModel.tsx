@@ -1,6 +1,11 @@
 import Link from "next/link";
 
-const RegisterModal = ({ authState, setauthState }) => {
+interface RegisterModalProps {
+  authState: boolean; // Replace 'boolean' with the correct type for authState
+  setauthState: React.Dispatch<React.SetStateAction<boolean>>; // Replace 'boolean' if necessary
+}
+
+const RegisterModal: React.FC<RegisterModalProps> = ({ authState, setauthState }) => {
   return (
     <div className="modal p-2">
       <div className="modal-header p-2">
