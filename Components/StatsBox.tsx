@@ -46,7 +46,6 @@ const StatsBox = () => {
           <button
             type="button"
             className="dash-component-exit"
-            href=""
             onClick={(e) => exitDahElement(e)}
           >
             <FontAwesomeIcon size="2xl" icon={faArrowLeft} />
@@ -63,21 +62,21 @@ const StatsBox = () => {
             <div className="wrapper-x-slider">
               <div
                 id="BarChart"
-                onClick={(e) => selectVisual(e)}
+                onClick={(e) => setVisual(e as any)}
                 className="x-elements"
               >
                 <BarChart />
               </div>
               <div
                 id="PieChart"
-                onClick={(e) => selectVisual(e)}
+                onClick={(e) => setVisual(e as any)}
                 className="x-elements"
               >
                 <PieChart />
               </div>
               <div
                 id="AreaChart"
-                onClick={(e) => selectVisual(e)}
+                onClick={(e) => setVisual(e as any)}
                 className="x-elements"
               >
                 <AreaChart />
