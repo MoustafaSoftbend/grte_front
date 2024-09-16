@@ -353,15 +353,10 @@ const Example = () => {
     enableEditing: true,
     enableFullScreenToggle: false,
     onIsFullScreenChange: (isFullScreen) => {
-      const element = document.querySelector(".dash .dash-main");
+      const element:any = document.querySelector(".dash .dash-main");
       if (element) {
-      if (isFullScreen) {
-        element.querySelector(".dash .dash-main").style.zIndex = 3;
-      } else {
-        element.querySelector(".dash .dash-main").style.zIndex = 0;
+        element.style.zIndex = isFullScreen ? "3" : "0";
       }
-    }
-
       console.log("Full screen", isFullScreen);
     },
     getRowId: (row) => row.id,
