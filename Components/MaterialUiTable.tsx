@@ -6,6 +6,9 @@ import {
   type MRT_Row,
   type MRT_TableOptions,
   useMaterialReactTable,
+  type MRT_Cell,
+  type MRT_TableInstance,
+  type MRT_Column,
 } from "material-react-table";
 import { Box, Button, IconButton, Tooltip } from "@mui/material";
 import {
@@ -196,7 +199,7 @@ const Example = () => {
       {
         accessorKey: "id",
         header: "Id",
-        Cell: ({ value, row }) => {
+        Cell: ({ cell, row }: { cell: MRT_Cell<User, unknown>; row: MRT_Row<User> }) => {
           // console.log(row.original);
           return <TableCell data-key="Id">{row.original.id}</TableCell>;
         },
@@ -206,7 +209,7 @@ const Example = () => {
       {
         accessorKey: "firstName",
         header: "First Name",
-        Cell: ({ value, row }) => {
+        Cell: ({ cell, row }: { cell: MRT_Cell<User, unknown>; row: MRT_Row<User> }) => {
           // console.log("Cell row:", row);
           return (
             <TableCell data-key="First Name">
@@ -231,7 +234,7 @@ const Example = () => {
       {
         accessorKey: "lastName",
         header: "Last Name",
-        Cell: ({ value, row }) => {
+        Cell: ({ cell, row }: { cell: MRT_Cell<User, unknown>; row: MRT_Row<User> }) => {
           // console.log("Cell Value:", row);
           return (
             <TableCell data-key="Last Name">{row.original.lastName}</TableCell>
@@ -253,7 +256,7 @@ const Example = () => {
       {
         accessorKey: "email",
         header: "Email",
-        Cell: ({ value, row }) => {
+        Cell: ({ cell, row }: { cell: MRT_Cell<User, unknown>; row: MRT_Row<User> }) => {
           // console.log("Cell Value:", row);
           return <TableCell data-key="Email">{row.original.email}</TableCell>;
         },
@@ -273,7 +276,7 @@ const Example = () => {
       {
         accessorKey: "state",
         header: "State",
-        Cell: ({ value, row }) => {
+        Cell: ({ cell, row }: { cell: MRT_Cell<User, unknown>; row: MRT_Row<User> }) => {
           // console.log("Cell Value:", row);
           return <TableCell data-key="State">{row.original.state}</TableCell>;
         },
