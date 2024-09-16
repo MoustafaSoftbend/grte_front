@@ -12,7 +12,7 @@ import {
 
 import { useRouter } from "next/router";
 
-const Navbar = ({ bg_status }) => {
+const Navbar = ({ bg_status}) => {
   const nav = useRef(null);
   const nav_btn = useRef(null);
   const [scroll, setScroll] = useState(0);
@@ -34,13 +34,16 @@ const Navbar = ({ bg_status }) => {
       setScroll(window.scrollY);
     });
     console.log(scroll);
-    if (!bg_status) {
-      document.querySelector(".action-menu").style.translateY = "400px";
+    if (!(bg_status as any)) {
+      const element = document.querySelector(".action-menu")
+      if(element) {
+        element.style.translateY = "400px";
+      }
     }
   }, []);
 
-  const handleMenu = (e) => {
-    const drawer = document.querySelector(".drawer");
+  const handleMenu = () => {
+    const drawer:any = document.querySelector(".drawer");
     drawer.style.transform = "translateX(0%)";
   };
   return (
