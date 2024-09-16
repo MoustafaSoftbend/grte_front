@@ -12,7 +12,11 @@ import {
 
 import { useRouter } from "next/router";
 
-const Navbar = ({ bg_status}) => {
+interface NavbarProps {
+  bg_status?: boolean; // Adjust based on the actual type of bg_status
+}
+
+const Navbar: React.FC<NavbarProps> = ({ bg_status}) => {
   const nav = useRef(null);
   const nav_btn = useRef(null);
   const [scroll, setScroll] = useState(0);
@@ -34,7 +38,7 @@ const Navbar = ({ bg_status}) => {
       setScroll(window.scrollY);
     });
     console.log(scroll);
-    if (!(bg_status as any)) {
+    if (!bg_status) {
       const element = document.querySelector(".action-menu")
       if(element) {
         element.style.translateY = "400px";
