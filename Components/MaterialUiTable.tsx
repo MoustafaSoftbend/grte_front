@@ -352,7 +352,7 @@ const Example = () => {
     editDisplayMode: "row", // ('modal', 'cell', 'table', and 'custom' are also available)
     enableEditing: true,
     enableFullScreenToggle: false,
-    onFullScreenChange: (isFullScreen) => {
+    onIsFullScreenChange: (isFullScreen) => {
       if (isFullScreen) {
         document.querySelector(".dash .dash-main").style.zIndex = 3;
       } else {
