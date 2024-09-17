@@ -9,7 +9,7 @@ export interface DashNavigationState {
 }
 
 const initialState: DashNavigationState = {
-  dashElReference: null,
+  dashElReference: number | null,
   previewDisplay: true,
   lastActionTrigger: "",
 };
