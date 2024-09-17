@@ -191,7 +191,7 @@ const svg = () => {
                 duration: 0.5,
                 stagger: {
                     ease: "power4.inOut",
-                    from: "right",
+                    from: "end",
                     amount: 0.1,
                 },
                 "--card-translateY-offset": "0%",
