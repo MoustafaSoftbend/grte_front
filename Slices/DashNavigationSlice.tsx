@@ -3,13 +3,13 @@ import { AppState } from "../Store";
 import { HYDRATE } from "next-redux-wrapper";
 
 export interface DashNavigationState {
-  dashElReference: number;
+  dashElReference: number | null;
   previewDisplay: boolean;
   lastActionTrigger: string;
 }
 
 const initialState: DashNavigationState = {
-  dashElReference: number | null,
+  dashElReference: null,
   previewDisplay: true,
   lastActionTrigger: "",
 };
