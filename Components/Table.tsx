@@ -21,12 +21,12 @@ const Table = () => {
   const dash = useSelector(selectDashState);
   const { dashElReference, previewDisplay } = dash;
 
-  const exitDahElement = (e) => {
+  const exitDahElement = (e:any) => {
     dispatch(setDashNavigationState(null));
     dispatch(setPreviewDisplay(true));
     dispatch(setLastActionTrigger("dashElement"));
     console.log(previewDisplay);
-    document.querySelectorAll("section").forEach((e) => {
+    document.querySelectorAll("section").forEach((e:any) => {
       e.style.display = "block";
     });
   };
@@ -51,7 +51,6 @@ const Table = () => {
           <button
             type="button"
             className="dash-component-exit"
-            href=""
             onClick={(e) => exitDahElement(e)}
           >
             <FontAwesomeIcon size="2xl" icon={faArrowLeft} />
