@@ -4,6 +4,10 @@ type Inputs = {
   example: string;
   exampleRequired: string;
 };
+type IFormInput = {
+  facilityName: string; // Add other form fields as needed
+};
+
 
 export default function DispForm() {
   const { register, handleSubmit } = useForm<IFormInput>();
