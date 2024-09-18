@@ -6,12 +6,14 @@ interface TableState {
   dashElReference: HTMLElement | null; // Use the appropriate type
   previewDisplay: boolean; // Assuming this is another property you have
   isFullScreen: boolean;
+  lastActionTrigger: string;
 }
 
 const initialState: TableState = {
   dashElReference: null, // Use the appropriate type
   previewDisplay: true,
   isFullScreen: false,
+  lastActionTrigger: "",
 };
 
 export const TableSlice = createSlice({
