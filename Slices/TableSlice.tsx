@@ -2,9 +2,15 @@ import { createSlice } from "@reduxjs/toolkit";
 import { AppState } from "../Store";
 import { HYDRATE } from "next-redux-wrapper";
 
-export interface TableState {}
+interface TableState {
+  dashElReference: HTMLElement | null; // Use the appropriate type
+  previewDisplay: boolean; // Assuming this is another property you have
+  isFullScreen: boolean;
+}
 
 const initialState: TableState = {
+  dashElReference: null, // Use the appropriate type
+  previewDisplay: true,
   isFullScreen: false,
 };
 
