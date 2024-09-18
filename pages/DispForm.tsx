@@ -1,11 +1,11 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 
-type Inputs = {
-  example: string;
-  exampleRequired: string;
-};
+
 type IFormInput = {
-  facilityName: string; // Add other form fields as needed
+  firstName: string;
+  facilityName: string; 
+  lastName: string;
+  age: number
 };
 
 
@@ -18,7 +18,6 @@ export default function DispForm() {
       <label htmlFor="firstName">
         firstName
         <input
-          name="firstName"
           {...register("firstName", { required: true, maxLength: 20 })}
         />
       </label>
