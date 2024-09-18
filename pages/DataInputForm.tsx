@@ -23,7 +23,10 @@ const ElectricalFacilityForm = () => {
             required: "Facility Name is required",
           })}
         />
-        {errors.facilityName && <p>{errors.facilityName.message}</p>}
+        {errors.facilityName && typeof errors.facilityName.message === 'string' && (
+  <p>{errors.facilityName.message}</p>
+)}
+
       </div>
 
       <div>
@@ -32,7 +35,7 @@ const ElectricalFacilityForm = () => {
           id="location"
           {...register("location", { required: "Location is required" })}
         />
-        {errors.location && <p>{errors.location.message}</p>}
+        {errors.location && errors.location.message === 'string' && ( <p>{errors.location.message}</p>)}
       </div>
 
       <div>
@@ -45,7 +48,7 @@ const ElectricalFacilityForm = () => {
             valueAsNumber: true,
           })}
         />
-        {errors.capacity && <p>{errors.capacity.message}</p>}
+        {errors.capacity && errors.capacity.message === 'string' && ( <p>{errors.capacity.message}</p>)}
       </div>
 
       <div>
@@ -59,7 +62,7 @@ const ElectricalFacilityForm = () => {
           <option value="maintenance">Maintenance</option>
           <option value="decommissioned">Decommissioned</option>
         </select>
-        {errors.status && <p>{errors.status.message}</p>}
+        {errors.status && errors.status.message === 'string' && ( <p>{errors.status.message}</p>)}
       </div>
 
       <button type="submit">Submit</button>
