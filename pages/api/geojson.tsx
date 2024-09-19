@@ -1,7 +1,9 @@
 import { readFileSync } from "fs";
 import geojsonParser from "geojson-parser";
 
-export default (req, res) => {
+
+
+export default (req:any, res:any) => {
   const filePath = "path/to/your/geojson/file";
   const geoJsonData = readFileSync(
     "../../utils/electric-network-algeria.geojson",
