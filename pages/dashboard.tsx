@@ -29,7 +29,7 @@ const DashBoard = () => {
   const dispatch = useDispatch();
   // console.log(dashElReference);
 
-  const navigateToSection = (e) => {
+  const navigateToSection = (e: any) => {
     // setPageRef(e.currentTarget.id);
     // setPreview(false);
 
@@ -45,7 +45,7 @@ const DashBoard = () => {
   const displayElements = () => {
     const elements = document.querySelectorAll("section");
 
-    elements.forEach((el) => {
+    elements.forEach((el: any) => {
       if (dashElReference && el.id != dashElReference) {
         console.log(el.id);
         el.style.display = "none";
@@ -67,7 +67,7 @@ const DashBoard = () => {
           <div className="grid gap-[10px]">
             <section
               id="0"
-              onClick={(e) => navigateToSection(e)}
+              onClick={(e: any) => navigateToSection(e)}
               className={`geo-map dash-section ${
                 dashElReference == 0 ? "h-[95vh] m-0" : "h-[300px] p-[2.5px]"
               }`}
@@ -76,7 +76,7 @@ const DashBoard = () => {
             </section>
             <section
               id="1"
-              onClick={(e) => navigateToSection(e)}
+              onClick={(e: any) => navigateToSection(e)}
               className={`table-section dash-section dash-section ${
                 dashElReference == 1 ? "h-[auto]" : "h-[300px] p-[2.5px]"
               }`}
@@ -85,7 +85,7 @@ const DashBoard = () => {
             </section>
             <section
               id="2"
-              onClick={(e) => navigateToSection(e)}
+              onClick={(e: any) => navigateToSection(e)}
               className={`stats-section dash-section dash-section ${
                 dashElReference == 2 ? "h-[auto]" : "h-[auto] p-[2.5px]"
               }`}
