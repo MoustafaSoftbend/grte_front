@@ -21,7 +21,7 @@ import SvgTree from "../Components/SvgTree";
 import { fadeObserver } from "../utils/fadeObservers";
 
 const Home: NextPage = () => {
-  const vid_src:any = useRef(null);;
+  let vid_src: any = useRef(null);
   var img_src;
   const [trigger, setTrigger] = useState(false);
 
@@ -34,7 +34,7 @@ const Home: NextPage = () => {
   // const [position_one, setPosition_one] = useState(0);
   // const [position_two, setPosition_two] = useState(0);
 
-  const video_click = (e:any) => {
+  const video_click = (e: any) => {
     const selected = document.querySelector(".vid-selected");
     setTrigger(!trigger);
     if (selected) {
@@ -44,7 +44,8 @@ const Home: NextPage = () => {
       e.target.parentElement.classList.add("vid-selected");
     } else {
       e.target.classList.add("vid-selected");
-      vid_src = (document.querySelector(".vid-selected") as any).childNodes[1].src;
+      vid_src = (document.querySelector(".vid-selected") as any).childNodes[1]
+        .src;
       (document.querySelector(".main-vid") as any).remove();
       img_src = document.createElement("img");
       img_src.src = vid_src;
@@ -82,12 +83,14 @@ const Home: NextPage = () => {
     //       thirdScrollPoint,
     //   ),
     // );
-    vid_src.current = (document.querySelector(".vid-selected")as any).childNodes[1].src;
-    (document.querySelector(".main-vid")as any).remove();
+    vid_src.current = (
+      document.querySelector(".vid-selected") as any
+    ).childNodes[1].src;
+    (document.querySelector(".main-vid") as any).remove();
     img_src = document.createElement("img");
     img_src.src = vid_src;
     img_src.classList.add("main-vid");
-    (document.querySelector(".main-grid-view")as any).appendChild(img_src);
+    (document.querySelector(".main-grid-view") as any).appendChild(img_src);
 
     fadeObserver(".fade-left");
     fadeObserver(".fade-right");
@@ -258,25 +261,21 @@ const Home: NextPage = () => {
                       className="company-logo"
                       src="https://yt3.googleusercontent.com/ytc/APkrFKZZHsrqMc5cXu-GlPBTpeRRGCj5X0jzBmfGitvhw2c=s900-c-k-c0x00ffffff-no-rj"
                       alt=""
-                      srcset=""
                     />
                     <img
                       className="company-logo"
                       src="data:image/png;base64,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"
                       alt=""
-                      srcset=""
                     />
                     <img
                       className="company-logo"
                       src="data:image/png;base64,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"
                       alt=""
-                      srcset=""
                     />
                     <img
                       className="company-logo"
                       src="https://global-uploads.webflow.com/63f6e52346a353ca1752970e/644fb7a6c824c71d276a1768_20230501T1259-9653b395-fc0f-470f-8fef-b2e3747837e1.jpeg"
                       alt=""
-                      srcset=""
                     />
                     <img
                       className="company-logo"
