@@ -60,17 +60,17 @@ export const colorRange = [
   [209, 55, 78],
 ];
 
-export const COLOR_SCALE = scaleThreshold()
+export const COLOR_SCALE = scaleThreshold<number, number[]>()
   .domain([0, 4, 8, 12, 20, 32, 52, 84, 136, 220])
   .range([
     [26, 152, 80],
     [102, 189, 99],
     [166, 217, 106],
     [217, 239, 139],
-    [255, 255, 191],
     [254, 224, 139],
     [253, 174, 97],
     [244, 109, 67],
     [215, 48, 39],
-    [168, 0, 0],
-  ]);
+    [165, 0, 38],
+  ] as number[][]);
+
