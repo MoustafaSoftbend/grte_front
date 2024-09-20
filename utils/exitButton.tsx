@@ -1,4 +1,4 @@
-export const exitDahEl = (e) => {
+export const exitDahEl = (e:any) => {
   const exit = document.querySelectorAll(".dash-component-exit");
   // e.target.style.display = "none";
   console.log(
@@ -7,10 +7,11 @@ export const exitDahEl = (e) => {
   const id =
     e.target.parentElement.parentElement.parentElement.parentElement.id;
   // e.target.parentElement.parentElement.style.height = "300px";
-  document.getElementById(id).style.height = "300px";
+  const h:any = document.getElementById(id);
+  h.style.height = "300px";
   const sections = document.querySelectorAll(".dash .dash-main section");
 
-  sections.forEach((s, i) => {
+  sections.forEach((s:any, i:number) => {
     s.style.display = "block";
     s.style.height = "300px";
     console.log(s);

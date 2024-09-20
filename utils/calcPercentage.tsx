@@ -42,7 +42,7 @@ export const svgAnimatiom = () => {
     // threshold: 1,
   };
   const rectObserver = new IntersectionObserver((e) => {
-    e.forEach((e) => {
+    e.forEach((e:any) => {
       if (!e.isIntersecting && e.intersectionRatio >= 1) {
         e.target.children[0].style.height = 0;
         return;
@@ -62,7 +62,7 @@ export const svgAnimatiom = () => {
     rootMargin: "0px 0px -200px 0px",
   };
   const pathObserver = new IntersectionObserver((e) => {
-    e.forEach((e) => {
+    e.forEach((e:any) => {
       // console.log(!e.isIntersecting);
 
       if (!e.isIntersecting) {
@@ -83,7 +83,7 @@ export const svgAnimatiom = () => {
     rootMargin: "0px 0px -200px 0px",
   };
   const circleObserver = new IntersectionObserver((e) => {
-    e.forEach((e) => {
+    e.forEach((e:any) => {
       // console.log(!e.isIntersecting);
 
       if (!e.isIntersecting) {
