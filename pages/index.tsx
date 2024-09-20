@@ -25,14 +25,14 @@ const Home: NextPage = () => {
   var img_src;
   const [trigger, setTrigger] = useState(false);
 
-  // const [scrollPosition, setScrollPosition] = useState(0);
-  // const [windowWidth, setWindowWidth] = useState(0);
-  // const [firstScrollPoint, setFirstScrollPoint] = useState(0);
-  // const [secondScrollPoint, setSecondScrollPoint] = useState(0);
-  // const [thirdScrollPoint, setThirdScrollPoint] = useState(0);
-  // const [position_zero, setPosition_zero] = useState(0);
-  // const [position_one, setPosition_one] = useState(0);
-  // const [position_two, setPosition_two] = useState(0);
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(0);
+  const [firstScrollPoint, setFirstScrollPoint] = useState(0);
+  const [secondScrollPoint, setSecondScrollPoint] = useState(0);
+  const [thirdScrollPoint, setThirdScrollPoint] = useState(0);
+  const [position_zero, setPosition_zero] = useState(0);
+  const [position_one, setPosition_one] = useState(0);
+  const [position_two, setPosition_two] = useState(0);
 
   const video_click = (e: any) => {
     const selected = document.querySelector(".vid-selected");
@@ -302,14 +302,14 @@ const Home: NextPage = () => {
           <section className="card-section">
             <div className="c_container relative">
               <SvgTree
-              // scrollPosition={scrollPosition}
-              // windowWidth={windowWidth}
-              // firstScrollPoint={firstScrollPoint}
-              // secondScrollPoint={secondScrollPoint}
-              // thirdScrollPoint={thirdScrollPoint}
-              // position_zero={position_zero}
-              // position_one={position_one}
-              // position_two={position_two}
+              scrollPosition={scrollPosition}
+              windowWidth={windowWidth}
+              firstScrollPoint={firstScrollPoint}
+              secondScrollPoint={secondScrollPoint}
+              thirdScrollPoint={thirdScrollPoint}
+              position_zero={position_zero}
+              position_one={position_one}
+              position_two={position_two}
               />
               <div className="card-section-content">
                 <div className="article relative fade-left">
