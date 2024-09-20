@@ -74,7 +74,7 @@ const Navbar: React.FC<NavbarProps> = ({ bg_status}) => {
             src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
           ></img>
           <Link className="logo-name p-1 sm:text-sm font-bold" href="/">
-            Sonelgaz TE
+            S-tech Energy 
           </Link>
           {!bg_status && (
             <div className="center-navigation flex flex-row p-1 ">

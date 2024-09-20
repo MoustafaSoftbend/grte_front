@@ -711,8 +711,8 @@ const Home: NextPage = () => {
         </main>
         <footer className="footer bkg-black clr-primary">
           <div className="container">
-            <h1 className="credentials">Sonelgaz transport electrique</h1>
-            <address className="">700 buraux gue de constantine</address>
+            <h1 className="credentials">S-tech Energy transport electrique</h1>
+            <address className="">Boston California Chkoupistan</address>
           </div>
         </footer>
       </div>
