@@ -1,6 +1,11 @@
 import Link from "next/link";
 
-const RegisterModal = () => {
+interface RegisterModalProps {
+  authState: boolean; // Replace 'boolean' with the correct type for authState
+  setauthState: React.Dispatch<React.SetStateAction<boolean>>; // Replace 'boolean' if necessary
+}
+
+const RegisterModal: React.FC<RegisterModalProps> = ({ authState, setauthState }) => {
   return (
     <div className="modal p-2">
       <div className="modal-header p-2">
@@ -74,9 +79,16 @@ const RegisterModal = () => {
       </form>
       <div className="modal-footer p-2 flex flex-row">
         <p className="text-md p-2">Already a member</p>
-        <Link href="/" className="Sign-link text-md font-bold p-2 link">
+        <button
+          onClick={(e) => {
+            if (!authState) {
+              setauthState(!authState);
+            }
+          }}
+          className="Sign-link text-md font-bold p-2 link"
+        >
           Sign In
-        </Link>
+        </button>
       </div>
     </div>
   );

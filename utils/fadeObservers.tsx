@@ -1,11 +1,11 @@
-export const fadeObserver = (className) => {
+export const fadeObserver = (className:string) => {
   const leftFaders = document.querySelectorAll(className);
   const leftObserverOptions = {
     // threshold: 1,
     // rootMArgin: "0 0 0 0",
   };
   const leftObserver = new IntersectionObserver((entities) => {
-    entities.forEach((entity) => {
+    entities.forEach((entity:any) => {
       // console.log(entity.target);
       if (!entity.isIntersecting) {
         return;

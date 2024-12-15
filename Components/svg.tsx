@@ -1,6 +1,5 @@
 import { useEffect } from "react"
 import { gsap, imagesLoaded } from '../utils/gsap';
-import styles from '../styles/globals.css'
 
 const svg = () => {
     useEffect(()=>{
@@ -12,24 +11,24 @@ const svg = () => {
             prev: document.querySelector(".btn--left"),
             next: document.querySelector(".btn--right"),
         };
-        const cardsContainerEl = document.querySelector(".cards__wrapper");
-        const appBgContainerEl = document.querySelector(".app__bg");
+        const cardsContainerEl:any = document.querySelector(".cards__wrapper");
+        const appBgContainerEl:any = document.querySelector(".app__bg");
         
-        const cardInfosContainerEl = document.querySelector(".info__wrapper");
+        const cardInfosContainerEl:any = document.querySelector(".info__wrapper");
         
 
-        buttons.next.addEventListener("click", () => swapCards("right"));
+        buttons.next?.addEventListener("click", () => swapCards("right"));
         
-        buttons.prev.addEventListener("click", () => swapCards("left"));
+        buttons.prev?.addEventListener("click", () => swapCards("left"));
         
-        function swapCards(direction) {
-            const currentCardEl = cardsContainerEl.querySelector(".current--card");
-            const previousCardEl = cardsContainerEl.querySelector(".previous--card");
-            const nextCardEl = cardsContainerEl.querySelector(".next--card");
+        function swapCards(direction:any) {
+            const currentCardEl:any = cardsContainerEl?.querySelector(".current--card");
+            const previousCardEl:any = cardsContainerEl?.querySelector(".previous--card");
+            const nextCardEl:any = cardsContainerEl?.querySelector(".next--card");
         
-            const currentBgImageEl = appBgContainerEl.querySelector(".current--image");
-            const previousBgImageEl = appBgContainerEl.querySelector(".previous--image");
-            const nextBgImageEl = appBgContainerEl.querySelector(".next--image");
+            const currentBgImageEl:any = appBgContainerEl?.querySelector(".current--image");
+            const previousBgImageEl:any = appBgContainerEl?.querySelector(".previous--image");
+            const nextBgImageEl:any = appBgContainerEl?.querySelector(".next--image");
         
             changeInfo(direction);
             swapCardsClass();
@@ -37,13 +36,13 @@ const svg = () => {
             removeCardEvents(currentCardEl);
         
             function swapCardsClass() {
-                currentCardEl.classList.remove("current--card");
-                previousCardEl.classList.remove("previous--card");
-                nextCardEl.classList.remove("next--card");
+                currentCardEl?.classList.remove("current--card");
+                previousCardEl?.classList.remove("previous--card");
+                nextCardEl?.classList.remove("next--card");
         
-                currentBgImageEl.classList.remove("current--image");
-                previousBgImageEl.classList.remove("previous--image");
-                nextBgImageEl.classList.remove("next--image");
+                currentBgImageEl?.classList.remove("current--image");
+                previousBgImageEl?.classList.remove("previous--image");
+                nextBgImageEl?.classList.remove("next--image");
         
                 currentCardEl.style.zIndex = "50";
                 currentBgImageEl.style.zIndex = "-2";
@@ -78,10 +77,10 @@ const svg = () => {
             }
         }
         
-        function changeInfo(direction) {
-            let currentInfoEl = cardInfosContainerEl.querySelector(".current--info");
-            let previousInfoEl = cardInfosContainerEl.querySelector(".previous--info");
-            let nextInfoEl = cardInfosContainerEl.querySelector(".next--info");
+        function changeInfo(direction:any) {
+            let currentInfoEl:any = cardInfosContainerEl?.querySelector(".current--info");
+            let previousInfoEl:any = cardInfosContainerEl?.querySelector(".previous--info");
+            let nextInfoEl:any = cardInfosContainerEl?.querySelector(".next--info");
         
             gsap.timeline()
                 .to([buttons.prev, buttons.next], {
@@ -100,7 +99,7 @@ const svg = () => {
                 "-="
             )
                 .call(() => {
-                swapInfosClass(direction);
+                swapInfosClass();
             })
                 .call(() => initCardEvents())
                 .fromTo(
@@ -141,7 +140,7 @@ const svg = () => {
             }
         }
         
-        function updateCard(e) {
+        function updateCard(e:any) {
             const card = e.currentTarget;
             const box = card.getBoundingClientRect();
             const centerPosition = {
@@ -152,15 +151,15 @@ const svg = () => {
             gsap.set(card, {
                 "--current-card-rotation-offset": `${angle}deg`,
             });
-            const currentInfoEl = cardInfosContainerEl.querySelector(".current--info");
+            const currentInfoEl:any = cardInfosContainerEl?.querySelector(".current--info");
             gsap.set(currentInfoEl, {
                 rotateY: `${angle}deg`,
             });
         }
         
-        function resetCardTransforms(e) {
+        function resetCardTransforms(e:any) {
             const card = e.currentTarget;
-            const currentInfoEl = cardInfosContainerEl.querySelector(".current--info");
+            const currentInfoEl:any = cardInfosContainerEl?.querySelector(".current--info");
             gsap.set(card, {
                 "--current-card-rotation-offset": 0,
             });
@@ -170,16 +169,16 @@ const svg = () => {
         }
         
         function initCardEvents() {
-            const currentCardEl = cardsContainerEl.querySelector(".current--card");
+            const currentCardEl:any = cardsContainerEl?.querySelector(".current--card");
             currentCardEl.addEventListener("pointermove", updateCard);
-            currentCardEl.addEventListener("pointerout", (e) => {
+            currentCardEl.addEventListener("pointerout", (e:any) => {
                 resetCardTransforms(e);
             });
         }
         
         initCardEvents();
         
-        function removeCardEvents(card) {
+        function removeCardEvents(card:any) {
             card.removeEventListener("pointermove", updateCard);
         }
         
@@ -192,7 +191,7 @@ const svg = () => {
                 duration: 0.5,
                 stagger: {
                     ease: "power4.inOut",
-                    from: "right",
+                    from: "end",
                     amount: 0.1,
                 },
                 "--card-translateY-offset": "0%",
@@ -216,7 +215,8 @@ const svg = () => {
         }
         
         const waitForImages = () => {
-            const images = [...document.querySelectorAll("img")];
+            const doc:any =document.querySelectorAll("img")
+            const images = [...doc];
             const totalImages = images.length;
             let loadedImages = 0;
             const loaderEl = document.querySelector(".loader span");
@@ -234,7 +234,7 @@ const svg = () => {
             });
         
             images.forEach((image) => {
-                imagesLoaded(image, (instance) => {
+                imagesLoaded(image, (instance:any) => {
                     if (instance.isComplete) {
                         loadedImages++;
                         let loadProgress = loadedImages / totalImages;

@@ -1,9 +1,9 @@
 export const fadeEffect = (
-  denominator,
+  denominator:any,
   // el_position,
   // el_scroll_position,
   // ref_percentage,
-  percentage = 0,
+  percentage:number = 0,
 ) => {
   // console.log(percentage);
   // if (ratio < 1 && ratio > 0) {
@@ -55,7 +55,7 @@ export const fadeEffect = (
     //     element.style.opacity = 1;
     //   }
     // });
-    element.forEach((el, i) => {
+    element.forEach((el:any, i:number) => {
       const pathLength = el.getTotalLength();
       el.style.strokeDasharray = pathLength;
       el.style.strokeDashoffset = pathLength;

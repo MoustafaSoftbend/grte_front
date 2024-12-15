@@ -9,16 +9,15 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const Drawer = () => {
-  const HandleCloseMenu = (e) => {
-    const drawer = document.querySelector(".drawer");
-    drawer.style.transform = "translateX(100%)";
+  const HandleCloseMenu = (): void => {
+    const drawer = document.querySelector(".drawer") as HTMLElement | null;
+    drawer!.style.transform = "translateX(100%)";
   };
   return (
     <div className="drawer clr-primary ml-2">
       <button
-        onClick={(e) => HandleCloseMenu(e)}
+        onClick={HandleCloseMenu}
         className="close-link text-title"
-        href=""
       >
         <FontAwesomeIcon className="close-button" icon={faXmark} />
       </button>

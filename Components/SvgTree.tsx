@@ -2,6 +2,17 @@ import { useEffect, useRef, useState } from "react";
 import { fadeEffect } from "../utils/fadeEffect";
 import { calcPercentage, svgAnimatiom } from "../utils/calcPercentage";
 
+type SvgTreeProps = {
+  scrollPosition: number;
+  windowWidth: number;
+  firstScrollPoint: number;
+  secondScrollPoint: number;
+  thirdScrollPoint :number,
+  position_zero:number,
+  position_one:number,
+  position_two:number,
+};
+
 const SvgTree = ({
   scrollPosition,
   windowWidth,
@@ -11,11 +22,11 @@ const SvgTree = ({
   position_zero,
   position_one,
   position_two,
-}) => {
-  const path = useRef([]);
-  const circles = useRef([]);
-  const path_l = useRef([]);
-  const circles_l = useRef([]);
+}: SvgTreeProps) => {
+  const path = useRef<(SVGPathElement | null)[]>([]);
+  const circles = useRef<(SVGEllipseElement | null)[]>([]);
+  const path_l = useRef<(SVGPathElement | null)[]>([]);
+  const circles_l = useRef<(SVGEllipseElement | null)[]>([]);
   const [percentage, setPercentage] = useState(0);
   useEffect(() => {
     const ratio = (position_one + 0.4 * thirdScrollPoint) / thirdScrollPoint;
@@ -97,7 +108,7 @@ const SvgTree = ({
           //ref={(e) => (path.current[5] = e)}
         />
         <ellipse
-          ref={(e) => (circles.current[1] = e)}
+          ref={(e:any) => (circles.current[1] = e)}
           cx="129.5"
           cy="15.5"
           rx="12.5"
@@ -122,25 +133,25 @@ const SvgTree = ({
           stroke="#18EDE5"
         />
         <path
-          ref={(e) => (path_l.current[0] = e)}
+          ref={(e:any) => (path_l.current[0] = e)}
           d="M233.53 144.397C315.119 229.201 420.505 242.762 463 238.942"
           stroke="#18EDE5"
           stroke-width="10"
         />
         <path
-          ref={(e) => (path_l.current[1] = e)}
+          ref={(e:any) => (path_l.current[1] = e)}
           d="M233.53 679.582C315.119 764.387 420.505 777.948 463 774.128"
           stroke="#18EDE5"
           stroke-width="10"
         />
         <path
-          ref={(e) => (path_l.current[2] = e)}
+          ref={(e:any) => (path_l.current[2] = e)}
           d="M233.53 1391.25C315.119 1476.06 420.505 1489.62 463 1485.8"
           stroke="#18EDE5"
           stroke-width="10"
         />
         <ellipse
-          ref={(e) => (circles_l.current[0] = e)}
+          ref={(e:any) => (circles_l.current[0] = e)}
           cx="234.04"
           cy="1898.36"
           rx="22.947"
@@ -148,25 +159,25 @@ const SvgTree = ({
           fill="#18EDE5"
         />
         <path
-          ref={(e) => (path_l.current[3] = e)}
+          ref={(e:any) => (path_l.current[3] = e)}
           d="M230.47 267.02C148.881 351.824 43.4945 365.385 1.00002 361.565"
           stroke="#18EDE5"
           stroke-width="10"
         />
         <path
-          ref={(e) => (path_l.current[4] = e)}
+          ref={(e:any) => (path_l.current[4] = e)}
           d="M233.53 823.979C151.94 908.784 46.5541 922.345 4.05959 918.525"
           stroke="#18EDE5"
           stroke-width="10"
         />
         <path
-          ref={(e) => (path_l.current[5] = e)}
+          ref={(e:any) => (path_l.current[5] = e)}
           d="M233.53 1486.37C151.94 1571.18 46.5541 1584.74 4.05959 1580.92"
           stroke="#18EDE5"
           stroke-width="10"
         />
         <ellipse
-          ref={(e) => (circles_l.current[1] = e)}
+          ref={(e:any) => (circles_l.current[1] = e)}
           cx="233.53"
           cy="22.9201"
           rx="22.4371"

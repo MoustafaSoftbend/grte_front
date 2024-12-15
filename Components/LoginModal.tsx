@@ -1,8 +1,12 @@
 import Link from "next/link";
+interface LoginModalProps {
+  authState: boolean; // Assuming authState is a boolean
+  setauthState: (state: boolean) => void;
+}
 
-const LoginModal = ({ authState, setauthState }) => {
-  const goToLogin = (e) => {
-    if (!authState) {
+const LoginModal: React.FC<LoginModalProps> = ({ authState, setauthState}) => {
+  const goToRegister = () : void => {
+    if (authState) {
       setauthState(!authState);
     }
   };
@@ -56,8 +60,7 @@ const LoginModal = ({ authState, setauthState }) => {
       <div className="modal-footer p-2 flex flex-row">
         <p className="text-md p-2">Don't have an account</p>
         <button
-          onClick={(e) => goToLogin(e)}
-          href="/"
+          onClick={() => goToRegister()}
           className="Sign-link text-md font-bold p-2 link"
         >
           Register
